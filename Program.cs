@@ -21,6 +21,7 @@ namespace SchoolAdmission
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AdmissionExam());
             //HI BITCHES
+            //ARJAY IGOP
         }
 
         // Import the SetProcessDPIAware function from user32.dll
