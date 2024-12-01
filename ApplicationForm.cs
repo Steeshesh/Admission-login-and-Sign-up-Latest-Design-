@@ -60,7 +60,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NextButton_Click(object sender, EventArgs e)
         {
             // Define the TextBoxes (Your existing TextBox controls)
             TextBox[] textBoxes = { FirstName, MiddleName, LastName, DateOfBirth, Nationality, MotherName,
@@ -229,12 +229,12 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         }
 
-        private void txtCal_TextChanged(object sender, EventArgs e)
+        private void DateOfBirth_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void FatherName_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -248,18 +248,15 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         {
 
         }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void MaleButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        private void FirstName_TextChanged(object sender, EventArgs e)
+        {
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        }
+        private void Nationality_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -316,6 +313,51 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         }
 
         private void EmailAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MotherName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuardianName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomeAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuardianNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HSName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HSAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Strand_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GWA_TextChanged(object sender, EventArgs e)
         {
 
         }
