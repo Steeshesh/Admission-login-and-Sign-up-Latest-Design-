@@ -19,9 +19,7 @@ namespace SchoolAdmission
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ApplicationForm2());
-            //HI BITCHES
-            //ARJAY IGOP
+            Application.Run(new Login());
         }
 
         // Import the SetProcessDPIAware function from user32.dll

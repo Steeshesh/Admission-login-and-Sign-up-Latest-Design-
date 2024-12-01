@@ -86,6 +86,7 @@
             this.Instructionbtn.Text = "How to Apply";
             this.Instructionbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Instructionbtn.UseVisualStyleBackColor = false;
+            this.Instructionbtn.Click += new System.EventHandler(this.Instructionbtn_Click);
             // 
             // Applybtn
             // 

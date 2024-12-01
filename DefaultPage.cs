@@ -68,5 +68,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         {
 
         }
+
+        private void Instructionbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
