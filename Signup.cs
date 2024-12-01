@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -13,8 +6,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class Signup : Form
     {
-
         private Database database;
+
         public Signup()
         {
             InitializeComponent();
@@ -23,80 +16,79 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Empty for now, if needed in future.
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            // Handle text change if needed.
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            // Handle label click if needed.
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            // Handle label click if needed.
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // Handle text change if needed.
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            // Handle label click if needed.
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
+            // Handle panel paint event if needed.
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SignupButton_Click(object sender, EventArgs e)
         {
-            // Check if fields are empty
+            // Get input from fields
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             string confirmPassword = txtConPassword.Text.Trim();
 
+            // Check if any fields are empty
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
             {
-                MessageBox.Show("Username and Password fields cannot be empty", "Sign up failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("All fields are required.", "Sign Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Check if passwords match
             if (password != confirmPassword)
             {
-                MessageBox.Show("Passwords do not match, please re-enter", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Passwords do not match. Please re-enter.", "Sign Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Clear();
                 txtConPassword.Clear();
                 txtPassword.Focus();
                 return;
             }
 
-            // Call RegisterUser function to add user to the database
+            // Call the registration function
             if (RegisterUser(username, password))
             {
-                MessageBox.Show("Your account has been successfully created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtUsername.Clear();
-                txtPassword.Clear();
-                txtConPassword.Clear();
+                MessageBox.Show("Account successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearFields();
             }
             else
             {
-                MessageBox.Show("Username already exists. Please try a different one.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The username already exists. Please try a different one.", "Sign Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private bool RegisterUser(string username, string password)
         {
-            // Check if the username already exists
-            string checkUserQuery = "SELECT COUNT(*) FROM AccountInformation WHERE Username = @username";
+            // Check if username already exists
+            string checkUserQuery = "SELECT COUNT(*) FROM accountinformation WHERE Username = @username";
             object result = database.ExecuteScalar(checkUserQuery, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);
@@ -107,17 +99,36 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 return false; // Username already exists
             }
 
-            // Register the new user
-            string registerQuery = "INSERT INTO AccountInformation (Username, Password) VALUES (@username, @password)";
+            // Insert a new row in userinformation and retrieve the UserID
+            string insertUserQuery = "INSERT INTO userinformation (FirstName, MiddleName, LastName, Gender, DateOfBirth, Nationality, FathersName, MothersName, GuardiansName) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
+            int userId = database.ExecuteInsertAndReturnId(insertUserQuery, null);
+
+            if (userId == -1)
+            {
+                MessageBox.Show("An error occurred while creating the user. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Insert the account details in accountinformation
+            string registerQuery = "INSERT INTO accountinformation (Username, Password, UserID, UserType) VALUES (@username, @password, @userId, 'Student')";
             return database.ExecuteQuery(registerQuery, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@userId", userId);
             });
         }
+
+        private void ClearFields()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtConPassword.Clear();
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
-
+            // Handle label click if needed.
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -135,12 +146,12 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            // Handle label click if needed.
         }
 
         private void txtConPassword_TextChanged(object sender, EventArgs e)
         {
-
+            // Handle text change if needed.
         }
     }
 }
