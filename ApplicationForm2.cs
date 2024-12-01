@@ -65,26 +65,6 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                     GMoralButton.Focus();
                 }
             }
-            // Check if the user has selected a course from at least one ComboBox
-            else if (string.IsNullOrEmpty(txtCourseBS.Text) && string.IsNullOrEmpty(txtCourseBE.Text) && string.IsNullOrEmpty(txtCourseDip.Text))
-            {
-                // If no course has been selected in any ComboBox, show an error message
-                MessageBox.Show("Please select a course before proceeding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                // Optionally, focus on the first empty ComboBox to prompt the user
-                if (string.IsNullOrEmpty(txtCourseBS.Text))
-                {
-                    txtCourseBS.Focus();
-                }
-                else if (string.IsNullOrEmpty(txtCourseBE.Text))
-                {
-                    txtCourseBE.Focus();
-                }
-                else if (string.IsNullOrEmpty(txtCourseDip.Text))
-                {
-                    txtCourseDip.Focus();
-                }
-            }
             else
             {
                 // If all buttons have a document uploaded, proceed to the next form
@@ -103,8 +83,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Call the method to update availability when the selection changes
-            UpdateComboBoxAvailability();
+           
         }
 
         private void informations_Paint(object sender, PaintEventArgs e)
@@ -209,38 +188,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Call the method to update availability when the selection changes
-            UpdateComboBoxAvailability();
-        }
-
-        // Method to lock or enable ComboBoxes based on selections
-        private void UpdateComboBoxAvailability()
-        {
-            // If txtCourseBS has a selection, disable the other ComboBoxes
-            if (!string.IsNullOrEmpty(txtCourseBS.Text))
-            {
-                txtCourseBE.Enabled = false;  // Disable txtCourseBE
-                txtCourseDip.Enabled = false; // Disable txtCourseDip
-            }
-            // If txtCourseBE has a selection, disable the other ComboBoxes
-            else if (!string.IsNullOrEmpty(txtCourseBE.Text))
-            {
-                txtCourseBS.Enabled = false;  // Disable txtCourseBS
-                txtCourseDip.Enabled = false; // Disable txtCourseDip
-            }
-            // If txtCourseDip has a selection, disable the other ComboBoxes
-            else if (!string.IsNullOrEmpty(txtCourseDip.Text))
-            {
-                txtCourseBS.Enabled = false;  // Disable txtCourseBS
-                txtCourseBE.Enabled = false; // Disable txtCourseBE
-            }
-            else
-            {
-                // If all ComboBoxes are empty, enable all ComboBoxes
-                txtCourseBS.Enabled = true;
-                txtCourseBE.Enabled = true;
-                txtCourseDip.Enabled = true;
-            }
+            
         }
 
         private void ProgramSelection_Enter(object sender, EventArgs e)
@@ -250,8 +198,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void txtCourseDip_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Call the method to update availability when the selection changes
-            UpdateComboBoxAvailability();
+            
         }
 
         private void FormalPic_Click(object sender, EventArgs e)
