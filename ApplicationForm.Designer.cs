@@ -35,6 +35,7 @@
             this.Instructionbtn = new System.Windows.Forms.Button();
             this.Statusbtn = new System.Windows.Forms.Button();
             this.Nextbtn = new System.Windows.Forms.Panel();
+            this.NextButton = new System.Windows.Forms.Button();
             this.EducBack = new System.Windows.Forms.GroupBox();
             this.GWA = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -56,6 +57,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Personalinfo = new System.Windows.Forms.GroupBox();
+            this.FatherName = new System.Windows.Forms.TextBox();
+            this.Nationality = new System.Windows.Forms.TextBox();
+            this.DateOfBirth = new System.Windows.Forms.TextBox();
+            this.MaleButton = new System.Windows.Forms.RadioButton();
+            this.FirstName = new System.Windows.Forms.TextBox();
             this.LastName = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.MiddleName = new System.Windows.Forms.TextBox();
@@ -70,12 +76,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.MaleButton = new System.Windows.Forms.RadioButton();
-            this.DateOfBirth = new System.Windows.Forms.TextBox();
-            this.Nationality = new System.Windows.Forms.TextBox();
-            this.FatherName = new System.Windows.Forms.TextBox();
-            this.NextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.Nextbtn.SuspendLayout();
             this.EducBack.SuspendLayout();
@@ -140,6 +140,13 @@
             resources.ApplyResources(this.Nextbtn, "Nextbtn");
             this.Nextbtn.Name = "Nextbtn";
             this.Nextbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint);
+            // 
+            // NextButton
+            // 
+            resources.ApplyResources(this.NextButton, "NextButton");
+            this.NextButton.Name = "NextButton";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // EducBack
             // 
@@ -316,6 +323,42 @@
             this.Personalinfo.TabStop = false;
             this.Personalinfo.Enter += new System.EventHandler(this.Personalinfo_Enter);
             // 
+            // FatherName
+            // 
+            resources.ApplyResources(this.FatherName, "FatherName");
+            this.FatherName.Name = "FatherName";
+            this.FatherName.TextChanged += new System.EventHandler(this.FatherName_TextChanged);
+            // 
+            // Nationality
+            // 
+            resources.ApplyResources(this.Nationality, "Nationality");
+            this.Nationality.Name = "Nationality";
+            this.Nationality.TextChanged += new System.EventHandler(this.Nationality_TextChanged);
+            // 
+            // DateOfBirth
+            // 
+            this.DateOfBirth.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            resources.ApplyResources(this.DateOfBirth, "DateOfBirth");
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.TextChanged += new System.EventHandler(this.DateOfBirth_TextChanged);
+            this.DateOfBirth.Enter += new System.EventHandler(this.DateOfBirth_Enter);
+            this.DateOfBirth.Leave += new System.EventHandler(this.DateOfBirth_Leave);
+            // 
+            // MaleButton
+            // 
+            resources.ApplyResources(this.MaleButton, "MaleButton");
+            this.MaleButton.BackColor = System.Drawing.Color.Transparent;
+            this.MaleButton.Name = "MaleButton";
+            this.MaleButton.TabStop = true;
+            this.MaleButton.UseVisualStyleBackColor = false;
+            this.MaleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
+            // 
+            // FirstName
+            // 
+            resources.ApplyResources(this.FirstName, "FirstName");
+            this.FirstName.Name = "FirstName";
+            this.FirstName.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
+            // 
             // LastName
             // 
             resources.ApplyResources(this.LastName, "LastName");
@@ -408,47 +451,6 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Name = "label3";
-            // 
-            // FirstName
-            // 
-            resources.ApplyResources(this.FirstName, "FirstName");
-            this.FirstName.Name = "FirstName";
-            this.FirstName.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
-            // 
-            // MaleButton
-            // 
-            resources.ApplyResources(this.MaleButton, "MaleButton");
-            this.MaleButton.BackColor = System.Drawing.Color.Transparent;
-            this.MaleButton.Name = "MaleButton";
-            this.MaleButton.TabStop = true;
-            this.MaleButton.UseVisualStyleBackColor = false;
-            this.MaleButton.CheckedChanged += new System.EventHandler(this.MaleButton_CheckedChanged);
-            // 
-            // DateOfBirth
-            // 
-            this.DateOfBirth.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            resources.ApplyResources(this.DateOfBirth, "DateOfBirth");
-            this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.TextChanged += new System.EventHandler(this.DateOfBirth_TextChanged);
-            // 
-            // Nationality
-            // 
-            resources.ApplyResources(this.Nationality, "Nationality");
-            this.Nationality.Name = "Nationality";
-            this.Nationality.TextChanged += new System.EventHandler(this.Nationality_TextChanged);
-            // 
-            // FatherName
-            // 
-            resources.ApplyResources(this.FatherName, "FatherName");
-            this.FatherName.Name = "FatherName";
-            this.FatherName.TextChanged += new System.EventHandler(this.FatherName_TextChanged);
-            // 
-            // NextButton
-            // 
-            resources.ApplyResources(this.NextButton, "NextButton");
-            this.NextButton.Name = "NextButton";
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // ApplicationForm
             // 

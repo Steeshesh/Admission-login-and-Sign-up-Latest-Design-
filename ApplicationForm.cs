@@ -276,24 +276,6 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         }
 
-        private void DateOfBirth_Enter_1(object sender, EventArgs e)
-        {
-            if(DateOfBirth.Text == "YYYY-MM-DD")
-            {
-                DateOfBirth.Text = "";
-                DateOfBirth.ForeColor = Color.Black;
-            }
-        }
-
-        private void DateOfBirth_Leave_1(object sender, EventArgs e)
-        {
-            if (DateOfBirth.Text == "")
-            {
-                DateOfBirth.Text = "YYYY-MM-DD";
-                DateOfBirth.ForeColor = Color.DarkGray;
-            }
-        }
-
         private void EmailAdd_Enter(object sender, EventArgs e)
         {
             if (EmailAdd.Text == "Example@gmail.com")
@@ -360,6 +342,24 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private void GWA_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DateOfBirth_Enter(object sender, EventArgs e)
+        {
+            if (DateOfBirth.Text == "YYYY-MM-DD")
+            {
+                DateOfBirth.Text = "";
+                DateOfBirth.ForeColor = Color.Black;
+            }
+        }
+
+        private void DateOfBirth_Leave(object sender, EventArgs e)
+        {
+            if (DateOfBirth.Text == "")
+            {
+                DateOfBirth.Text = "YYYY-MM-DD";
+                DateOfBirth.ForeColor = Color.DarkGray;
+            }
         }
     }
 }
