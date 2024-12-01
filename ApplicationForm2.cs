@@ -39,7 +39,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Check if not all required buttons have been clicked/uploaded
             if (!IsDocumentUploaded(FormalPic) || !IsDocumentUploaded(Record) || !IsDocumentUploaded(BirthCert) || !IsDocumentUploaded(GoodMorals))
@@ -50,19 +50,19 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 // Optionally, highlight the first missing document by focusing on the respective button
                 if (!IsDocumentUploaded(FormalPic))
                 {
-                    btnFormal.Focus();  // Focus on the missing button
+                    FormalButton.Focus();  // Focus on the missing button
                 }
                 else if (!IsDocumentUploaded(Record))
                 {
-                    btnReport.Focus();
+                    TORButton.Focus();
                 }
                 else if (!IsDocumentUploaded(BirthCert))
                 {
-                    btnBirthcert.Focus();
+                    BCertButton.Focus();
                 }
                 else if (!IsDocumentUploaded(GoodMorals))
                 {
-                    btnGoodMoral.Focus();
+                    GMoralButton.Focus();
                 }
             }
             // Check if the user has selected a course from at least one ComboBox
@@ -117,7 +117,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void FormalButton_Click(object sender, EventArgs e)
         {
             String imageLocation = "";
             try
@@ -125,7 +125,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.Filter = "jgp files(*.jpg)|*.jpg| PNG files(*.png)|*.png| ALL Files(*.*)|*.*";
 
-                if (dialog.ShowDialog() == DialogResult.OK) 
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     imageLocation = dialog.FileName;
                     FormalPic.ImageLocation = imageLocation;
@@ -138,7 +138,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void TORButton_Click(object sender, EventArgs e)
         {
             String imageLocation = "";
             try
@@ -159,7 +159,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BCertButton_Click(object sender, EventArgs e)
         {
             String imageLocation = "";
             try
@@ -180,7 +180,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void GMoralButton_Click(object sender, EventArgs e)
         {
             String imageLocation = "";
             try

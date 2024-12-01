@@ -92,11 +92,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
-            string connstring = "server=localhost;uid=root;database=dummy_db_account;password=;";
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = connstring;
-            con.Open();
-            string sql = "select Username from AccountInformation";
+
         }
 
         private void label4_Click(object sender, EventArgs e)

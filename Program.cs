@@ -19,7 +19,7 @@ namespace SchoolAdmission
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ApplicationForm());
+            Application.Run(new ApplicationForm2());
             //HI BITCHES
             //ARJAY IGOP
         }
