@@ -88,7 +88,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private bool RegisterUser(string username, string password)
         {
             // Check if username already exists
-            string checkUserQuery = "SELECT COUNT(*) FROM accountinformation WHERE Username = @username";
+            string checkUserQuery = "SELECT COUNT(*) FROM account WHERE Username = @username";
             object result = database.ExecuteScalar(checkUserQuery, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);
@@ -110,7 +110,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
 
             // Insert the account details in accountinformation
-            string registerQuery = "INSERT INTO accountinformation (Username, Password, UserID, UserType) VALUES (@username, @password, @userId, 'Student')";
+            string registerQuery = "INSERT INTO account (Username, Password, UserID, UserType) VALUES (@username, @password, @userId, 'Student')";
             return database.ExecuteQuery(registerQuery, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);

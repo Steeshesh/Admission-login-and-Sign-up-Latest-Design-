@@ -6,7 +6,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public class Database
     {
-        private string connectionString = "server=localhost;uid=root;database=dummy_db_account;password=;";
+        private string connectionString = "server=localhost;uid=root;database=dummy_db;password=;";
 
         public MySqlConnection GetConnection()
         {

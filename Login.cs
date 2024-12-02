@@ -59,7 +59,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private string Login1(string username, string password)
         {
-            string query = "SELECT UserType FROM AccountInformation WHERE Username = @username AND Password = @password";
+            string query = "SELECT UserType FROM account WHERE Username = @username AND Password = @password";
             object result = database.ExecuteScalar(query, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);
