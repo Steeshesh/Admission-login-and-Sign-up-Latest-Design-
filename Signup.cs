@@ -99,8 +99,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 return false; // Username already exists
             }
 
-            // Insert a new row in userinformation and retrieve the UserID
-            string insertUserQuery = "INSERT INTO userinformation (FirstName, MiddleName, LastName, Gender, DateOfBirth, Nationality, FathersName, MothersName, GuardiansName) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
+            // Insert a new row in user and retrieve the UserID
+            string insertUserQuery = "INSERT INTO user (FirstName, MiddleName, LastName, Gender, DateOfBirth, Nationality, FathersName, MothersName, GuardiansName) VALUES (NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
             int userId = database.ExecuteInsertAndReturnId(insertUserQuery, null);
 
             if (userId == -1)
@@ -109,7 +109,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 return false;
             }
 
-            // Insert the account details in accountinformation
+            // Insert the account details in account
             string registerQuery = "INSERT INTO account (Username, Password, UserID, UserType) VALUES (@username, @password, @userId, 'Student')";
             return database.ExecuteQuery(registerQuery, cmd =>
             {
