@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label11.Text" xml:space="preserve">
+    <value>*Application Opening: August 2025 – September 2025
+*Early Decision/Early Action Deadlines: October 15, 
+ 2025 – November 15, 2025
+*Entrance Exam Deadline): 1–2 weeks before the 
+ application deadline
+*Enrollment Confirmation Deadline: May 1</value>
+  </data>
 </root>

@@ -264,5 +264,11 @@
   <ItemGroup>
     <None Include="Resources\formal_pic1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADMISSION SYSTEM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADMISSION SYSTEM %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
