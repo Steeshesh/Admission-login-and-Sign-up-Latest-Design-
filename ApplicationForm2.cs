@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Admission_login_and_Sign_up__Latest_Design_
@@ -15,6 +9,12 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         public ApplicationForm2()
         {
             InitializeComponent();
+
+            // Enable double buffering to reduce flickering
+            SetStyle(ControlStyles.UserPaint |
+                     ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.OptimizedDoubleBuffer, true);
+            UpdateStyles();
         }
 
         private void Statusbtn_Click(object sender, EventArgs e)
@@ -41,137 +41,68 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            // Check if not all required buttons have been clicked/uploaded
             if (!IsDocumentUploaded(FormalPic) || !IsDocumentUploaded(Record) || !IsDocumentUploaded(BirthCert) || !IsDocumentUploaded(GoodMorals))
             {
-                // If any button has not been clicked/uploaded, show an error message
                 MessageBox.Show("Please upload all required documents before proceeding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // Optionally, highlight the first missing document by focusing on the respective button
-                if (!IsDocumentUploaded(FormalPic))
-                {
-                    FormalButton.Focus();  // Focus on the missing button
-                }
-                else if (!IsDocumentUploaded(Record))
-                {
-                    TORButton.Focus();
-                }
-                else if (!IsDocumentUploaded(BirthCert))
-                {
-                    BCertButton.Focus();
-                }
-                else if (!IsDocumentUploaded(GoodMorals))
-                {
-                    GMoralButton.Focus();
-                }
+                if (!IsDocumentUploaded(FormalPic)) FormalButton.Focus();
+                else if (!IsDocumentUploaded(Record)) TORButton.Focus();
+                else if (!IsDocumentUploaded(BirthCert)) BCertButton.Focus();
+                else if (!IsDocumentUploaded(GoodMorals)) GMoralButton.Focus();
             }
             else
             {
-                // If all buttons have a document uploaded, proceed to the next form
                 MessageBox.Show("All required files are uploaded. Proceeding to Status.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                new Status().Show();  // Proceed to the status form
+                new Status().Show();
                 this.Hide();
             }
         }
 
-        // Helper method to check if a document has been uploaded (by checking the ImageLocation of PictureBox)
         private bool IsDocumentUploaded(PictureBox pictureBox)
         {
-            return !string.IsNullOrEmpty(pictureBox.ImageLocation);  // Check if ImageLocation is not empty
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
+            return !string.IsNullOrEmpty(pictureBox.ImageLocation);
         }
 
         private void informations_Paint(object sender, PaintEventArgs e)
         {
-            informations.BackColor = Color.FromArgb(150, Color.Black);
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
+            using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
+            {
+                e.Graphics.FillRectangle(brush, informations.ClientRectangle);
+            }
         }
 
         private void FormalButton_Click(object sender, EventArgs e)
         {
-            String imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jgp files(*.jpg)|*.jpg| PNG files(*.png)|*.png| ALL Files(*.*)|*.*";
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    imageLocation = dialog.FileName;
-                    FormalPic.ImageLocation = imageLocation;
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Provide a Valid Photo", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            UploadDocument(FormalPic);
         }
 
         private void TORButton_Click(object sender, EventArgs e)
         {
-            String imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jgp files(*.jpg)|*.jpg| PNG files(*.png)|*.png| ALL Files(*.*)|*.*";
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    imageLocation = dialog.FileName;
-                    Record.ImageLocation = imageLocation;
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Provide a Valid Photo", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            UploadDocument(Record);
         }
 
         private void BCertButton_Click(object sender, EventArgs e)
         {
-            String imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jgp files(*.jpg)|*.jpg| PNG files(*.png)|*.png| ALL Files(*.*)|*.*";
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    imageLocation = dialog.FileName;
-                    BirthCert.ImageLocation = imageLocation;
-
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Provide a Valid Photo", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Error); // kahit wala na to pede nyo ilagay lahat ng error validation sa submit button
-            }
+            UploadDocument(BirthCert);
         }
 
         private void GMoralButton_Click(object sender, EventArgs e)
         {
-            String imageLocation = "";
+            UploadDocument(GoodMorals);
+        }
+
+        private void UploadDocument(PictureBox pictureBox)
+        {
             try
             {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jgp files(*.jpg)|*.jpg| PNG files(*.png)|*.png| ALL Files(*.*)|*.*";
+                OpenFileDialog dialog = new OpenFileDialog
+                {
+                    Filter = "Image files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg|All files (*.*)|*.*"
+                };
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    imageLocation = dialog.FileName;
-                    GoodMorals.ImageLocation = imageLocation;
-
+                    pictureBox.ImageLocation = dialog.FileName;
                 }
             }
             catch (Exception)
@@ -182,28 +113,17 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void Backbtn_Click(object sender, EventArgs e)
         {
-            new ApplicationForm().Show();//it does not save the recent input so nag rerefresh pag bumabalik
+            new ApplicationForm().Show();
             this.Hide();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ProgramSelection_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtCourseDip_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void FormalPic_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Retained empty event handlers and methods to avoid breaking references in other parts of the code
+        private void ApplicationForm2_Load(object sender, EventArgs e) { }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void label9_Click(object sender, EventArgs e) { }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void ProgramSelection_Enter(object sender, EventArgs e) { }
+        private void txtCourseDip_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void FormalPic_Click(object sender, EventArgs e) { }
     }
 }

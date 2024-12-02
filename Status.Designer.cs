@@ -139,7 +139,6 @@
             this.informations.Name = "informations";
             this.informations.Size = new System.Drawing.Size(970, 765);
             this.informations.TabIndex = 25;
-            this.informations.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint);
             // 
             // fullName
             // 

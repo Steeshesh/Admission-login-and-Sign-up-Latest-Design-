@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Admission_login_and_Sign_up__Latest_Design_
@@ -15,11 +9,16 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         public Status()
         {
             InitializeComponent();
+            // Enable double buffering to reduce flickering
+            SetStyle(ControlStyles.UserPaint |
+                     ControlStyles.AllPaintingInWmPaint |
+                     ControlStyles.OptimizedDoubleBuffer, true);
+            UpdateStyles();
         }
 
         private void Status_Load(object sender, EventArgs e)
         {
-
+            // Any initialization code if needed
         }
 
         private void Instructionbtn_Click(object sender, EventArgs e)
@@ -38,10 +37,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             Application.Exit();
         }
 
-        private void informations_Paint(object sender, PaintEventArgs e)
-        {
-            informations.BackColor = Color.FromArgb(150, Color.Black);
-        }
+        
+
 
         private void Applybtn_Click(object sender, EventArgs e)
         {

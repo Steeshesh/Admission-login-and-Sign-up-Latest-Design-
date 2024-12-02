@@ -34,10 +34,15 @@
             this.Instructionbtn = new System.Windows.Forms.Button();
             this.Statusbtn = new System.Windows.Forms.Button();
             this.informations = new System.Windows.Forms.Panel();
+            this.SubmitButton = new System.Windows.Forms.Button();
             this.Backbtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.DocumentaryReq = new System.Windows.Forms.GroupBox();
+            this.GMoralButton = new System.Windows.Forms.Button();
+            this.BCertButton = new System.Windows.Forms.Button();
+            this.TORButton = new System.Windows.Forms.Button();
+            this.FormalButton = new System.Windows.Forms.Button();
             this.GoodMorals = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.BirthCert = new System.Windows.Forms.PictureBox();
@@ -57,11 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCourseBS = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.FormalButton = new System.Windows.Forms.Button();
-            this.TORButton = new System.Windows.Forms.Button();
-            this.BCertButton = new System.Windows.Forms.Button();
-            this.GMoralButton = new System.Windows.Forms.Button();
-            this.SubmitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.informations.SuspendLayout();
             this.DocumentaryReq.SuspendLayout();
@@ -167,6 +167,20 @@
             this.informations.TabIndex = 30;
             this.informations.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint);
             // 
+            // SubmitButton
+            // 
+            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
+            this.SubmitButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SubmitButton.Location = new System.Drawing.Point(741, 570);
+            this.SubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SubmitButton.Name = "SubmitButton";
+            this.SubmitButton.Size = new System.Drawing.Size(83, 27);
+            this.SubmitButton.TabIndex = 9;
+            this.SubmitButton.Text = "Submit";
+            this.SubmitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            // 
             // Backbtn
             // 
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
@@ -234,6 +248,62 @@
             this.DocumentaryReq.TabIndex = 3;
             this.DocumentaryReq.TabStop = false;
             this.DocumentaryReq.Text = "Documentary Requirements";
+            // 
+            // GMoralButton
+            // 
+            this.GMoralButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GMoralButton.ForeColor = System.Drawing.Color.Black;
+            this.GMoralButton.Location = new System.Drawing.Point(592, 226);
+            this.GMoralButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GMoralButton.Name = "GMoralButton";
+            this.GMoralButton.Size = new System.Drawing.Size(69, 20);
+            this.GMoralButton.TabIndex = 19;
+            this.GMoralButton.Text = "Upload";
+            this.GMoralButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.GMoralButton.UseVisualStyleBackColor = true;
+            this.GMoralButton.Click += new System.EventHandler(this.GMoralButton_Click);
+            // 
+            // BCertButton
+            // 
+            this.BCertButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCertButton.ForeColor = System.Drawing.Color.Black;
+            this.BCertButton.Location = new System.Drawing.Point(592, 115);
+            this.BCertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BCertButton.Name = "BCertButton";
+            this.BCertButton.Size = new System.Drawing.Size(69, 20);
+            this.BCertButton.TabIndex = 18;
+            this.BCertButton.Text = "Upload";
+            this.BCertButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BCertButton.UseVisualStyleBackColor = true;
+            this.BCertButton.Click += new System.EventHandler(this.BCertButton_Click);
+            // 
+            // TORButton
+            // 
+            this.TORButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TORButton.ForeColor = System.Drawing.Color.Black;
+            this.TORButton.Location = new System.Drawing.Point(318, 226);
+            this.TORButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TORButton.Name = "TORButton";
+            this.TORButton.Size = new System.Drawing.Size(69, 20);
+            this.TORButton.TabIndex = 17;
+            this.TORButton.Text = "Upload";
+            this.TORButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TORButton.UseVisualStyleBackColor = true;
+            this.TORButton.Click += new System.EventHandler(this.TORButton_Click);
+            // 
+            // FormalButton
+            // 
+            this.FormalButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormalButton.ForeColor = System.Drawing.Color.Black;
+            this.FormalButton.Location = new System.Drawing.Point(354, 115);
+            this.FormalButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormalButton.Name = "FormalButton";
+            this.FormalButton.Size = new System.Drawing.Size(69, 20);
+            this.FormalButton.TabIndex = 16;
+            this.FormalButton.Text = "Upload";
+            this.FormalButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.FormalButton.UseVisualStyleBackColor = true;
+            this.FormalButton.Click += new System.EventHandler(this.FormalButton_Click);
             // 
             // GoodMorals
             // 
@@ -478,76 +548,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Choose your desired program:";
             // 
-            // FormalButton
-            // 
-            this.FormalButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormalButton.ForeColor = System.Drawing.Color.Black;
-            this.FormalButton.Location = new System.Drawing.Point(354, 115);
-            this.FormalButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FormalButton.Name = "FormalButton";
-            this.FormalButton.Size = new System.Drawing.Size(69, 20);
-            this.FormalButton.TabIndex = 16;
-            this.FormalButton.Text = "Upload";
-            this.FormalButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FormalButton.UseVisualStyleBackColor = true;
-            this.FormalButton.Click += new System.EventHandler(this.FormalButton_Click);
-            // 
-            // TORButton
-            // 
-            this.TORButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TORButton.ForeColor = System.Drawing.Color.Black;
-            this.TORButton.Location = new System.Drawing.Point(318, 226);
-            this.TORButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TORButton.Name = "TORButton";
-            this.TORButton.Size = new System.Drawing.Size(69, 20);
-            this.TORButton.TabIndex = 17;
-            this.TORButton.Text = "Upload";
-            this.TORButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TORButton.UseVisualStyleBackColor = true;
-            this.TORButton.Click += new System.EventHandler(this.TORButton_Click);
-            // 
-            // BCertButton
-            // 
-            this.BCertButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCertButton.ForeColor = System.Drawing.Color.Black;
-            this.BCertButton.Location = new System.Drawing.Point(592, 115);
-            this.BCertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BCertButton.Name = "BCertButton";
-            this.BCertButton.Size = new System.Drawing.Size(69, 20);
-            this.BCertButton.TabIndex = 18;
-            this.BCertButton.Text = "Upload";
-            this.BCertButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BCertButton.UseVisualStyleBackColor = true;
-            this.BCertButton.Click += new System.EventHandler(this.BCertButton_Click);
-            // 
-            // GMoralButton
-            // 
-            this.GMoralButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GMoralButton.ForeColor = System.Drawing.Color.Black;
-            this.GMoralButton.Location = new System.Drawing.Point(592, 226);
-            this.GMoralButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.GMoralButton.Name = "GMoralButton";
-            this.GMoralButton.Size = new System.Drawing.Size(69, 20);
-            this.GMoralButton.TabIndex = 19;
-            this.GMoralButton.Text = "Upload";
-            this.GMoralButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.GMoralButton.UseVisualStyleBackColor = true;
-            this.GMoralButton.Click += new System.EventHandler(this.GMoralButton_Click);
-            // 
-            // SubmitButton
-            // 
-            this.SubmitButton.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
-            this.SubmitButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SubmitButton.Location = new System.Drawing.Point(741, 570);
-            this.SubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(83, 27);
-            this.SubmitButton.TabIndex = 9;
-            this.SubmitButton.Text = "Submit";
-            this.SubmitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SubmitButton.UseVisualStyleBackColor = true;
-            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
-            // 
             // ApplicationForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -566,6 +566,7 @@
             this.Name = "ApplicationForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApplicationForm2";
+            this.Load += new System.EventHandler(this.ApplicationForm2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).EndInit();
             this.informations.ResumeLayout(false);
             this.informations.PerformLayout();

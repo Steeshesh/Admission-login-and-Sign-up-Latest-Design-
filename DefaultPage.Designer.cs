@@ -33,12 +33,6 @@
             this.Applybtn = new System.Windows.Forms.Button();
             this.Logout = new System.Windows.Forms.PictureBox();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
-            this.informations = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.AdmissionTest = new System.Windows.Forms.Button();
-            this.Procedure = new System.Windows.Forms.Button();
-            this.DocReq = new System.Windows.Forms.Button();
-            this.Qualifications = new System.Windows.Forms.Button();
             this.gradientPanel2 = new Admission_login_and_Sign_up__Latest_Design_.GradientPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,8 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
-            this.informations.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,110 +122,6 @@
             this.LogoutLink.TabStop = true;
             this.LogoutLink.Text = "Log-out";
             this.LogoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
-            // 
-            // informations
-            // 
-            this.informations.BackColor = System.Drawing.Color.Black;
-            this.informations.Controls.Add(this.panel1);
-            this.informations.Controls.Add(this.Qualifications);
-            this.informations.Location = new System.Drawing.Point(298, 288);
-            this.informations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.informations.Name = "informations";
-            this.informations.Padding = new System.Windows.Forms.Padding(27, 32, 27, 0);
-            this.informations.Size = new System.Drawing.Size(862, 345);
-            this.informations.TabIndex = 22;
-            this.informations.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.AdmissionTest);
-            this.panel1.Controls.Add(this.Procedure);
-            this.panel1.Controls.Add(this.DocReq);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(27, 74);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 194);
-            this.panel1.TabIndex = 1;
-            // 
-            // AdmissionTest
-            // 
-            this.AdmissionTest.BackColor = System.Drawing.Color.Transparent;
-            this.AdmissionTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AdmissionTest.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AdmissionTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdmissionTest.ForeColor = System.Drawing.Color.White;
-            this.AdmissionTest.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.dropdown_icon2;
-            this.AdmissionTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdmissionTest.Location = new System.Drawing.Point(0, 80);
-            this.AdmissionTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdmissionTest.Name = "AdmissionTest";
-            this.AdmissionTest.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.AdmissionTest.Size = new System.Drawing.Size(808, 42);
-            this.AdmissionTest.TabIndex = 3;
-            this.AdmissionTest.Text = "        Admission Test: What to expect?";
-            this.AdmissionTest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AdmissionTest.UseVisualStyleBackColor = false;
-            // 
-            // Procedure
-            // 
-            this.Procedure.BackColor = System.Drawing.Color.Transparent;
-            this.Procedure.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Procedure.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Procedure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Procedure.ForeColor = System.Drawing.Color.White;
-            this.Procedure.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.dropdown_icon2;
-            this.Procedure.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Procedure.Location = new System.Drawing.Point(0, 38);
-            this.Procedure.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Procedure.Name = "Procedure";
-            this.Procedure.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.Procedure.Size = new System.Drawing.Size(808, 42);
-            this.Procedure.TabIndex = 2;
-            this.Procedure.Text = "        Procedure";
-            this.Procedure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Procedure.UseVisualStyleBackColor = false;
-            // 
-            // DocReq
-            // 
-            this.DocReq.BackColor = System.Drawing.Color.Transparent;
-            this.DocReq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DocReq.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DocReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DocReq.ForeColor = System.Drawing.Color.White;
-            this.DocReq.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.dropdown_icon2;
-            this.DocReq.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DocReq.Location = new System.Drawing.Point(0, 0);
-            this.DocReq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DocReq.Name = "DocReq";
-            this.DocReq.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.DocReq.Size = new System.Drawing.Size(808, 38);
-            this.DocReq.TabIndex = 1;
-            this.DocReq.Text = "        Documentary Requirments";
-            this.DocReq.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DocReq.UseVisualStyleBackColor = false;
-            this.DocReq.Click += new System.EventHandler(this.DocReq_Click);
-            // 
-            // Qualifications
-            // 
-            this.Qualifications.BackColor = System.Drawing.Color.Transparent;
-            this.Qualifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Qualifications.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Qualifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Qualifications.ForeColor = System.Drawing.Color.White;
-            this.Qualifications.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.dropdown_icon2;
-            this.Qualifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Qualifications.Location = new System.Drawing.Point(27, 32);
-            this.Qualifications.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Qualifications.Name = "Qualifications";
-            this.Qualifications.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.Qualifications.Size = new System.Drawing.Size(808, 42);
-            this.Qualifications.TabIndex = 0;
-            this.Qualifications.Text = "        Qualifications";
-            this.Qualifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Qualifications.UseVisualStyleBackColor = false;
-            this.Qualifications.Click += new System.EventHandler(this.Qualifications_Click);
             // 
             // gradientPanel2
             // 
@@ -396,7 +284,6 @@
             this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.default_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 653);
-            this.Controls.Add(this.informations);
             this.Controls.Add(this.gradientPanel2);
             this.Controls.Add(this.gradientPanel1);
             this.Controls.Add(this.LogoutLink);
@@ -411,8 +298,6 @@
             this.Text = "DefaultPage";
             this.Load += new System.EventHandler(this.DefaultPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).EndInit();
-            this.informations.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.gradientPanel2.ResumeLayout(false);
             this.gradientPanel2.PerformLayout();
             this.gradientPanel1.ResumeLayout(false);
@@ -431,12 +316,6 @@
         private System.Windows.Forms.LinkLabel LogoutLink;
         private GradientPanel gradientPanel1;
         private GradientPanel gradientPanel2;
-        private System.Windows.Forms.Panel informations;
-        private System.Windows.Forms.Button Qualifications;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button AdmissionTest;
-        private System.Windows.Forms.Button Procedure;
-        private System.Windows.Forms.Button DocReq;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

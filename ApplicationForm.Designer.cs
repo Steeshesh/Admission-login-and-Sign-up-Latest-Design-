@@ -130,7 +130,7 @@
             // 
             // Nextbtn
             // 
-            this.Nextbtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Nextbtn.BackColor = System.Drawing.Color.DimGray;
             this.Nextbtn.Controls.Add(this.NextButton);
             this.Nextbtn.Controls.Add(this.EducBack);
             this.Nextbtn.Controls.Add(this.Contactinfo);
@@ -139,7 +139,6 @@
             this.Nextbtn.Controls.Add(this.Personalinfo);
             resources.ApplyResources(this.Nextbtn, "Nextbtn");
             this.Nextbtn.Name = "Nextbtn";
-            this.Nextbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint);
             // 
             // NextButton
             // 

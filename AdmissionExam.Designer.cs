@@ -1013,7 +1013,6 @@
             this.rbtnCorrect1.TabIndex = 1;
             this.rbtnCorrect1.Text = "TRUE ";
             this.rbtnCorrect1.UseVisualStyleBackColor = true;
-            this.rbtnCorrect1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
             // label2
             // 
