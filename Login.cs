@@ -28,45 +28,63 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            // Get username and password from text boxes
             string username = txtUsername.Text.Trim();
             string password = PasswordInput.Text.Trim();
 
-            // Call Login function to validate credentials and retrieve user type
-            string userType = Login1(username, password);
+            var loginResult = Login1(username, password);
 
-            if (userType == "Student")
+            if (loginResult.userType == "Student" && loginResult.userID.HasValue)
             {
+                UserSession.Username = loginResult.username;
+                UserSession.UserID = loginResult.userID.Value;
+                UserSession.UserType = loginResult.userType;
+
                 MessageBox.Show("Login successful! Redirecting to Default Page.");
-                new DefaultPage().Show();
+                var defaultPage = new DefaultPage();
+                defaultPage.Show();
                 this.Hide();
             }
-            else if (userType == "Admin")
+            else if (loginResult.userType == "Admin")
             {
                 MessageBox.Show("Welcome Admin. Returning to Login page for now.");
-                txtUsername.Text = "";
-                PasswordInput.Text = "";
+                txtUsername.Clear();
+                PasswordInput.Clear();
                 PasswordInput.Focus();
             }
             else
             {
                 MessageBox.Show("Invalid Username or Password, Please Try again", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                PasswordInput.Text = "";
+                txtUsername.Clear();
+                PasswordInput.Clear();
                 PasswordInput.Focus();
             }
         }
 
-        private string Login1(string username, string password)
+        private (string userType, int? userID, string username) Login1(string username, string password)
         {
-            string query = "SELECT UserType FROM account WHERE Username = @username AND Password = @password";
-            object result = database.ExecuteScalar(query, cmd =>
+            string query = "SELECT UserType, UserID FROM account WHERE Username = @username AND Password = @password";
+            using (var conn = database.GetConnection())
             {
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-            });
+                conn.Open();
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
 
-            return result?.ToString(); // Return the UserType if found, otherwise null
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return (
+                                userType: reader["UserType"].ToString(),
+                                userID: Convert.ToInt32(reader["UserID"]),
+                                username: username
+                            );
+                        }
+                    }
+                }
+            }
+            return (null, null, null);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

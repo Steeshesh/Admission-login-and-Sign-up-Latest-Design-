@@ -161,6 +161,7 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AdmissionExam.resx">
       <DependentUpon>AdmissionExam.cs</DependentUpon>
     </EmbeddedResource>

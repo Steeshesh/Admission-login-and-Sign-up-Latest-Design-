@@ -37,7 +37,6 @@
             this.fullName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SimpleInfos = new System.Windows.Forms.TableLayoutPanel();
-            this.studentPic = new System.Windows.Forms.PictureBox();
             this.applicationStatusLB = new System.Windows.Forms.Label();
             this.applicationStatus = new System.Windows.Forms.Label();
             this.documentationStatusLB = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.program = new System.Windows.Forms.Label();
             this.studentIDLB = new System.Windows.Forms.Label();
             this.studentID = new System.Windows.Forms.Label();
+            this.studentPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.informations.SuspendLayout();
             this.SimpleInfos.SuspendLayout();
@@ -61,9 +61,9 @@
             this.LogoutLink.BackColor = System.Drawing.Color.Transparent;
             this.LogoutLink.Font = new System.Drawing.Font("Microsoft Himalaya", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutLink.LinkColor = System.Drawing.Color.White;
-            this.LogoutLink.Location = new System.Drawing.Point(125, 758);
+            this.LogoutLink.Location = new System.Drawing.Point(111, 606);
             this.LogoutLink.Name = "LogoutLink";
-            this.LogoutLink.Size = new System.Drawing.Size(86, 33);
+            this.LogoutLink.Size = new System.Drawing.Size(70, 28);
             this.LogoutLink.TabIndex = 24;
             this.LogoutLink.TabStop = true;
             this.LogoutLink.Text = "Log-out";
@@ -74,9 +74,10 @@
             this.Logout.BackColor = System.Drawing.Color.Transparent;
             this.Logout.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.log_out;
             this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Logout.Location = new System.Drawing.Point(58, 743);
+            this.Logout.Location = new System.Drawing.Point(52, 594);
+            this.Logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(78, 61);
+            this.Logout.Size = new System.Drawing.Size(69, 49);
             this.Logout.TabIndex = 23;
             this.Logout.TabStop = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
@@ -87,10 +88,9 @@
             this.Applybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Applybtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Applybtn.ForeColor = System.Drawing.Color.White;
-            this.Applybtn.Location = new System.Drawing.Point(37, 398);
-            this.Applybtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Applybtn.Location = new System.Drawing.Point(33, 318);
             this.Applybtn.Name = "Applybtn";
-            this.Applybtn.Size = new System.Drawing.Size(238, 57);
+            this.Applybtn.Size = new System.Drawing.Size(212, 46);
             this.Applybtn.TabIndex = 22;
             this.Applybtn.Text = "Apply";
             this.Applybtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -103,10 +103,9 @@
             this.Instructionbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Instructionbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Instructionbtn.ForeColor = System.Drawing.Color.White;
-            this.Instructionbtn.Location = new System.Drawing.Point(37, 317);
-            this.Instructionbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Instructionbtn.Location = new System.Drawing.Point(33, 254);
             this.Instructionbtn.Name = "Instructionbtn";
-            this.Instructionbtn.Size = new System.Drawing.Size(238, 57);
+            this.Instructionbtn.Size = new System.Drawing.Size(212, 46);
             this.Instructionbtn.TabIndex = 21;
             this.Instructionbtn.Text = "How to Apply";
             this.Instructionbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -119,10 +118,9 @@
             this.Statusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Statusbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Statusbtn.ForeColor = System.Drawing.Color.White;
-            this.Statusbtn.Location = new System.Drawing.Point(37, 236);
-            this.Statusbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Statusbtn.Location = new System.Drawing.Point(33, 189);
             this.Statusbtn.Name = "Statusbtn";
-            this.Statusbtn.Size = new System.Drawing.Size(238, 57);
+            this.Statusbtn.Size = new System.Drawing.Size(212, 46);
             this.Statusbtn.TabIndex = 20;
             this.Statusbtn.Text = "Status";
             this.Statusbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,9 +133,10 @@
             this.informations.Controls.Add(this.panel1);
             this.informations.Controls.Add(this.SimpleInfos);
             this.informations.Controls.Add(this.studentPic);
-            this.informations.Location = new System.Drawing.Point(336, 26);
+            this.informations.Location = new System.Drawing.Point(299, 21);
+            this.informations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.informations.Name = "informations";
-            this.informations.Size = new System.Drawing.Size(970, 765);
+            this.informations.Size = new System.Drawing.Size(862, 612);
             this.informations.TabIndex = 25;
             // 
             // fullName
@@ -146,18 +145,20 @@
             this.fullName.BackColor = System.Drawing.Color.Transparent;
             this.fullName.Font = new System.Drawing.Font("Microsoft Himalaya", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullName.ForeColor = System.Drawing.Color.White;
-            this.fullName.Location = new System.Drawing.Point(322, 105);
+            this.fullName.Location = new System.Drawing.Point(286, 84);
             this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(561, 56);
+            this.fullName.Size = new System.Drawing.Size(472, 47);
             this.fullName.TabIndex = 2;
             this.fullName.Text = "Surname, First Name Middle Name";
+            this.fullName.Click += new System.EventHandler(this.fullName_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(302, 164);
+            this.panel1.Location = new System.Drawing.Point(268, 131);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 1);
+            this.panel1.Size = new System.Drawing.Size(533, 1);
             this.panel1.TabIndex = 1;
             // 
             // SimpleInfos
@@ -177,27 +178,17 @@
             this.SimpleInfos.Controls.Add(this.program, 1, 3);
             this.SimpleInfos.Controls.Add(this.studentIDLB, 0, 4);
             this.SimpleInfos.Controls.Add(this.studentID, 1, 4);
-            this.SimpleInfos.Location = new System.Drawing.Point(68, 236);
+            this.SimpleInfos.Location = new System.Drawing.Point(60, 189);
+            this.SimpleInfos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SimpleInfos.Name = "SimpleInfos";
             this.SimpleInfos.RowCount = 5;
             this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
-            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.SimpleInfos.Size = new System.Drawing.Size(845, 462);
+            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.SimpleInfos.Size = new System.Drawing.Size(751, 370);
             this.SimpleInfos.TabIndex = 0;
-            // 
-            // studentPic
-            // 
-            this.studentPic.BackColor = System.Drawing.Color.Transparent;
-            this.studentPic.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.profile_png;
-            this.studentPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.studentPic.Location = new System.Drawing.Point(49, 42);
-            this.studentPic.Name = "studentPic";
-            this.studentPic.Size = new System.Drawing.Size(280, 157);
-            this.studentPic.TabIndex = 3;
-            this.studentPic.TabStop = false;
             // 
             // applicationStatusLB
             // 
@@ -207,7 +198,7 @@
             this.applicationStatusLB.ForeColor = System.Drawing.Color.White;
             this.applicationStatusLB.Location = new System.Drawing.Point(6, 3);
             this.applicationStatusLB.Name = "applicationStatusLB";
-            this.applicationStatusLB.Size = new System.Drawing.Size(412, 90);
+            this.applicationStatusLB.Size = new System.Drawing.Size(365, 71);
             this.applicationStatusLB.TabIndex = 0;
             this.applicationStatusLB.Text = "Application Status:";
             this.applicationStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,9 +209,9 @@
             this.applicationStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.applicationStatus.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationStatus.ForeColor = System.Drawing.Color.White;
-            this.applicationStatus.Location = new System.Drawing.Point(427, 3);
+            this.applicationStatus.Location = new System.Drawing.Point(380, 3);
             this.applicationStatus.Name = "applicationStatus";
-            this.applicationStatus.Size = new System.Drawing.Size(412, 90);
+            this.applicationStatus.Size = new System.Drawing.Size(365, 71);
             this.applicationStatus.TabIndex = 1;
             this.applicationStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -230,9 +221,9 @@
             this.documentationStatusLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentationStatusLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentationStatusLB.ForeColor = System.Drawing.Color.White;
-            this.documentationStatusLB.Location = new System.Drawing.Point(6, 96);
+            this.documentationStatusLB.Location = new System.Drawing.Point(6, 77);
             this.documentationStatusLB.Name = "documentationStatusLB";
-            this.documentationStatusLB.Size = new System.Drawing.Size(412, 90);
+            this.documentationStatusLB.Size = new System.Drawing.Size(365, 71);
             this.documentationStatusLB.TabIndex = 2;
             this.documentationStatusLB.Text = "Documentation Status:";
             this.documentationStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -243,9 +234,9 @@
             this.documentationStat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.documentationStat.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.documentationStat.ForeColor = System.Drawing.Color.White;
-            this.documentationStat.Location = new System.Drawing.Point(427, 96);
+            this.documentationStat.Location = new System.Drawing.Point(380, 77);
             this.documentationStat.Name = "documentationStat";
-            this.documentationStat.Size = new System.Drawing.Size(412, 90);
+            this.documentationStat.Size = new System.Drawing.Size(365, 71);
             this.documentationStat.TabIndex = 3;
             this.documentationStat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -255,9 +246,9 @@
             this.examinationScoreLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.examinationScoreLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.examinationScoreLB.ForeColor = System.Drawing.Color.White;
-            this.examinationScoreLB.Location = new System.Drawing.Point(6, 189);
+            this.examinationScoreLB.Location = new System.Drawing.Point(6, 151);
             this.examinationScoreLB.Name = "examinationScoreLB";
-            this.examinationScoreLB.Size = new System.Drawing.Size(412, 94);
+            this.examinationScoreLB.Size = new System.Drawing.Size(365, 75);
             this.examinationScoreLB.TabIndex = 4;
             this.examinationScoreLB.Text = "Examination Score: ";
             this.examinationScoreLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,9 +259,9 @@
             this.examinationScore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.examinationScore.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.examinationScore.ForeColor = System.Drawing.Color.White;
-            this.examinationScore.Location = new System.Drawing.Point(427, 189);
+            this.examinationScore.Location = new System.Drawing.Point(380, 151);
             this.examinationScore.Name = "examinationScore";
-            this.examinationScore.Size = new System.Drawing.Size(412, 94);
+            this.examinationScore.Size = new System.Drawing.Size(365, 75);
             this.examinationScore.TabIndex = 5;
             this.examinationScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -280,9 +271,9 @@
             this.programLB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.programLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.programLB.ForeColor = System.Drawing.Color.White;
-            this.programLB.Location = new System.Drawing.Point(6, 286);
+            this.programLB.Location = new System.Drawing.Point(6, 229);
             this.programLB.Name = "programLB";
-            this.programLB.Size = new System.Drawing.Size(412, 88);
+            this.programLB.Size = new System.Drawing.Size(365, 70);
             this.programLB.TabIndex = 6;
             this.programLB.Text = "Program:";
             this.programLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,9 +284,9 @@
             this.program.Dock = System.Windows.Forms.DockStyle.Fill;
             this.program.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.program.ForeColor = System.Drawing.Color.White;
-            this.program.Location = new System.Drawing.Point(427, 286);
+            this.program.Location = new System.Drawing.Point(380, 229);
             this.program.Name = "program";
-            this.program.Size = new System.Drawing.Size(412, 88);
+            this.program.Size = new System.Drawing.Size(365, 70);
             this.program.TabIndex = 7;
             this.program.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -306,9 +297,9 @@
             this.studentIDLB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.studentIDLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentIDLB.ForeColor = System.Drawing.Color.White;
-            this.studentIDLB.Location = new System.Drawing.Point(6, 377);
+            this.studentIDLB.Location = new System.Drawing.Point(6, 302);
             this.studentIDLB.Name = "studentIDLB";
-            this.studentIDLB.Size = new System.Drawing.Size(412, 82);
+            this.studentIDLB.Size = new System.Drawing.Size(365, 65);
             this.studentIDLB.TabIndex = 8;
             this.studentIDLB.Text = "StudentID:";
             this.studentIDLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,19 +310,31 @@
             this.studentID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studentID.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentID.ForeColor = System.Drawing.Color.White;
-            this.studentID.Location = new System.Drawing.Point(427, 377);
+            this.studentID.Location = new System.Drawing.Point(380, 302);
             this.studentID.Name = "studentID";
-            this.studentID.Size = new System.Drawing.Size(412, 82);
+            this.studentID.Size = new System.Drawing.Size(365, 65);
             this.studentID.TabIndex = 9;
             this.studentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // studentPic
+            // 
+            this.studentPic.BackColor = System.Drawing.Color.Transparent;
+            this.studentPic.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.profile_png;
+            this.studentPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.studentPic.Location = new System.Drawing.Point(44, 34);
+            this.studentPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.studentPic.Name = "studentPic";
+            this.studentPic.Size = new System.Drawing.Size(249, 126);
+            this.studentPic.TabIndex = 3;
+            this.studentPic.TabStop = false;
+            // 
             // Status
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.default_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1330, 816);
+            this.ClientSize = new System.Drawing.Size(1182, 653);
             this.Controls.Add(this.informations);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.Logout);
@@ -339,6 +342,7 @@
             this.Controls.Add(this.Instructionbtn);
             this.Controls.Add(this.Statusbtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Status";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Status";
