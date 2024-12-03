@@ -20,6 +20,7 @@ namespace SchoolAdmission
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AdmissionExam());
+            //delete this
         }
 
         // Import the SetProcessDPIAware function from user32.dll
