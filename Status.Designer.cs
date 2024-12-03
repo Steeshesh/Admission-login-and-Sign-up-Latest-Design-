@@ -48,7 +48,7 @@
             this.studentIDLB = new System.Windows.Forms.Label();
             this.studentID = new System.Windows.Forms.Label();
             this.studentPic = new System.Windows.Forms.PictureBox();
-            this.NextButton = new System.Windows.Forms.Button();
+            this.TakeExamButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.informations.SuspendLayout();
             this.SimpleInfos.SuspendLayout();
@@ -133,7 +133,7 @@
             // informations
             // 
             this.informations.BackColor = System.Drawing.Color.Transparent;
-            this.informations.Controls.Add(this.NextButton);
+            this.informations.Controls.Add(this.TakeExamButton);
             this.informations.Controls.Add(this.fullName);
             this.informations.Controls.Add(this.panel1);
             this.informations.Controls.Add(this.SimpleInfos);
@@ -143,6 +143,7 @@
             this.informations.Name = "informations";
             this.informations.Size = new System.Drawing.Size(970, 765);
             this.informations.TabIndex = 25;
+            this.informations.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint_1);
             // 
             // fullName
             // 
@@ -333,18 +334,19 @@
             this.studentPic.TabIndex = 3;
             this.studentPic.TabStop = false;
             // 
-            // NextButton
+            // TakeExamButton
             // 
-            this.NextButton.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
-            this.NextButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.NextButton.Location = new System.Drawing.Point(749, 707);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(163, 34);
-            this.NextButton.TabIndex = 7;
-            this.NextButton.Text = "Take the Exam";
-            this.NextButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.NextButton.UseVisualStyleBackColor = true;
+            this.TakeExamButton.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
+            this.TakeExamButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TakeExamButton.Location = new System.Drawing.Point(762, 716);
+            this.TakeExamButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TakeExamButton.Name = "TakeExamButton";
+            this.TakeExamButton.Size = new System.Drawing.Size(163, 34);
+            this.TakeExamButton.TabIndex = 8;
+            this.TakeExamButton.Text = "Take the Exam";
+            this.TakeExamButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TakeExamButton.UseVisualStyleBackColor = true;
+            this.TakeExamButton.Click += new System.EventHandler(this.TakeExamButton_Click);
             // 
             // Status
             // 
@@ -398,6 +400,6 @@
         private System.Windows.Forms.Label program;
         private System.Windows.Forms.Label studentIDLB;
         private System.Windows.Forms.Label studentID;
-        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Button TakeExamButton;
     }
 }

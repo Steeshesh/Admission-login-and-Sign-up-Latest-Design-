@@ -78,5 +78,16 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
             return result?.ToString(); // Return the FirstName if found
         }
+
+        private void informations_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TakeExamButton_Click(object sender, EventArgs e)
+        {
+            new AdmissionExam().Show();
+            this.Hide();
+        }
     }
 }
