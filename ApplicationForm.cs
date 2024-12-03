@@ -13,17 +13,19 @@
     {
         public partial class ApplicationForm : Form
         {
+        private Database database;
             public ApplicationForm()
             {
                 InitializeComponent();
-            EnableDoubleBuffering(this);
-            // Enable double buffering to prevent flickering
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
-                          ControlStyles.AllPaintingInWmPaint |
-                          ControlStyles.UserPaint, true);
-            this.UpdateStyles();
-        }
+                database = new Database();
+                EnableDoubleBuffering(this);
+                // Enable double buffering to prevent flickering
+                this.DoubleBuffered = true;
+                this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
+                              ControlStyles.AllPaintingInWmPaint |
+                              ControlStyles.UserPaint, true);
+                this.UpdateStyles();
+            }
 
             private void ApplicationForm_Load(object sender, EventArgs e)
             {
@@ -53,9 +55,6 @@
                 null, control, new object[] { true });
         }
 
-
-
-
         private void Statusbtn_Click(object sender, EventArgs e)
             {
                 new Status().Show();
@@ -77,9 +76,6 @@
             {
                 Application.Exit();
             }
-
-        
-
 
         private void label7_Click(object sender, EventArgs e)
             {
@@ -223,14 +219,79 @@
                     return; // Stop further checks until user answers the radio button questions
                 }
 
-                // If all fields are filled and phone number is valid, continue with your submission logic here.
-                MessageBox.Show("All fields are valid. Proceeding with submission.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Assuming UserSession is a static class that holds information about the current user
+            int userId = UserSession.UserID; // Replace with the correct way to get the logged-in user's ID
 
+            if (userId == 0)
+            {
+                MessageBox.Show("Invalid user session. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Prepare the update queries
+            string updateUserQuery = @"UPDATE user 
+                               SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, 
+                                   Gender = @Gender, DateOfBirth = @DateOfBirth, Nationality = @Nationality, 
+                                   FathersName = @FathersName, MothersName = @MothersName, GuardiansName = @GuardiansName
+                               WHERE UserID = @UserID";
+
+            string updateAcademicQuery = @"UPDATE academic 
+                                   SET HighSchoolName = @HighSchoolName, HighSchoolAddress = @HighSchoolAddress, 
+                                       Strand = @Strand, GeneralWeightedAverage = @GWA
+                                   WHERE UserID = @UserID";
+
+            string updateContactQuery = @"UPDATE contact 
+                                  SET PhoneNo = @PhoneNo, EmailAddress = @EmailAddress, HomeAddress = @HomeAddress, 
+                                      GuardiansNo = @GuardiansNo
+                                  WHERE UserID = @UserID";
+
+            // Execute the queries
+            bool userUpdated = database.ExecuteQuery(updateUserQuery, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@FirstName", FirstName.Text);
+                cmd.Parameters.AddWithValue("@MiddleName", MiddleName.Text);
+                cmd.Parameters.AddWithValue("@LastName", LastName.Text);
+                cmd.Parameters.AddWithValue("@Gender", MaleButton.Checked ? "Male" : "Female");
+                cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth.Text);
+                cmd.Parameters.AddWithValue("@Nationality", Nationality.Text);
+                cmd.Parameters.AddWithValue("@FathersName", FatherName.Text);
+                cmd.Parameters.AddWithValue("@MothersName", MotherName.Text);
+                cmd.Parameters.AddWithValue("@GuardiansName", GuardianName.Text);
+                cmd.Parameters.AddWithValue("@UserID", userId);
+            });
+
+            bool academicUpdated = database.ExecuteQuery(updateAcademicQuery, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@HighSchoolName", HSName.Text);
+                cmd.Parameters.AddWithValue("@HighSchoolAddress", HSAddress.Text);
+                cmd.Parameters.AddWithValue("@Strand", Strand.Text);
+                cmd.Parameters.AddWithValue("@GWA", Convert.ToDecimal(GWA.Text));
+                cmd.Parameters.AddWithValue("@UserID", userId);
+            });
+
+            bool contactUpdated = database.ExecuteQuery(updateContactQuery, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@PhoneNo", PhoneNum.Text);
+                cmd.Parameters.AddWithValue("@EmailAddress", EmailAdd.Text);
+                cmd.Parameters.AddWithValue("@HomeAddress", HomeAdd.Text);
+                cmd.Parameters.AddWithValue("@GuardiansNo", GuardianNum.Text);
+                cmd.Parameters.AddWithValue("@UserID", userId);
+            });
+
+            // Check the results
+            if (userUpdated && academicUpdated && contactUpdated)
+            {
+                MessageBox.Show("Your information has been successfully updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new ApplicationForm2().Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show("Failed to update your information. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            private void label5_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
             {
 
             }
