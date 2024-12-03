@@ -111,12 +111,37 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
             // Insert the account details in account
             string registerQuery = "INSERT INTO account (Username, Password, UserID, UserType) VALUES (@username, @password, @userId, 'Student')";
-            return database.ExecuteQuery(registerQuery, cmd =>
+            bool accountInserted = database.ExecuteQuery(registerQuery, cmd =>
             {
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@userId", userId);
             });
+
+            if (!accountInserted)
+            {
+                MessageBox.Show("An error occurred while creating the account. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Insert placeholder rows for academic, contact, docreqs, and program tables
+            string insertAcademicQuery = "INSERT INTO academic (UserID, HighSchoolName, HighSchoolAddress, Strand, GeneralWeightedAverage) VALUES (@userId, NULL, NULL, NULL, NULL)";
+            string insertContactQuery = "INSERT INTO contact (UserID, PhoneNo, EmailAddress, HomeAddress, GuardiansNo) VALUES (@userId, NULL, NULL, NULL, NULL)";
+            string insertDocReqsQuery = "INSERT INTO docreqs (UserID, FormalPicture, BirthCertificate, TranscriptOfRecords, GoodMorals) VALUES (@userId, NULL, NULL, NULL, NULL)";
+            string insertProgramQuery = "INSERT INTO program (UserID, ProgramType, ProgramName) VALUES (@userId, NULL, NULL)";
+
+            bool academicInserted = database.ExecuteQuery(insertAcademicQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
+            bool contactInserted = database.ExecuteQuery(insertContactQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
+            bool docReqsInserted = database.ExecuteQuery(insertDocReqsQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
+            bool programInserted = database.ExecuteQuery(insertProgramQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
+
+            if (!academicInserted || !contactInserted || !docReqsInserted || !programInserted)
+            {
+                MessageBox.Show("An error occurred while setting up additional data. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true; // User successfully registered
         }
 
         private void ClearFields()
