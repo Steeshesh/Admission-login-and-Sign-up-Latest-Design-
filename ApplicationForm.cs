@@ -392,5 +392,10 @@
                     DateOfBirth.ForeColor = Color.DarkGray;
                 }
             }
+
+        private void Nextbtn_Paint(object sender, PaintEventArgs e)
+        {
+
         }
+    }
     }

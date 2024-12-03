@@ -81,9 +81,9 @@
             this.LogoutLink.Font = new System.Drawing.Font("Microsoft Himalaya", 16.2F);
             this.LogoutLink.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoutLink.LinkColor = System.Drawing.Color.White;
-            this.LogoutLink.Location = new System.Drawing.Point(111, 606);
+            this.LogoutLink.Location = new System.Drawing.Point(125, 758);
             this.LogoutLink.Name = "LogoutLink";
-            this.LogoutLink.Size = new System.Drawing.Size(70, 28);
+            this.LogoutLink.Size = new System.Drawing.Size(86, 33);
             this.LogoutLink.TabIndex = 29;
             this.LogoutLink.TabStop = true;
             this.LogoutLink.Text = "Log-out";
@@ -95,10 +95,10 @@
             this.Logout.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.log_out;
             this.Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Logout.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Logout.Location = new System.Drawing.Point(52, 594);
+            this.Logout.Location = new System.Drawing.Point(58, 742);
             this.Logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logout.Name = "Logout";
-            this.Logout.Size = new System.Drawing.Size(69, 49);
+            this.Logout.Size = new System.Drawing.Size(78, 61);
             this.Logout.TabIndex = 28;
             this.Logout.TabStop = false;
             this.Logout.Click += new System.EventHandler(this.Logout_Click);
@@ -110,9 +110,10 @@
             this.Applybtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F);
             this.Applybtn.ForeColor = System.Drawing.Color.White;
             this.Applybtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Applybtn.Location = new System.Drawing.Point(33, 318);
+            this.Applybtn.Location = new System.Drawing.Point(37, 398);
+            this.Applybtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Applybtn.Name = "Applybtn";
-            this.Applybtn.Size = new System.Drawing.Size(212, 46);
+            this.Applybtn.Size = new System.Drawing.Size(238, 58);
             this.Applybtn.TabIndex = 27;
             this.Applybtn.Text = "Apply";
             this.Applybtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -125,9 +126,10 @@
             this.Instructionbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F);
             this.Instructionbtn.ForeColor = System.Drawing.Color.White;
             this.Instructionbtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Instructionbtn.Location = new System.Drawing.Point(33, 254);
+            this.Instructionbtn.Location = new System.Drawing.Point(37, 318);
+            this.Instructionbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Instructionbtn.Name = "Instructionbtn";
-            this.Instructionbtn.Size = new System.Drawing.Size(212, 46);
+            this.Instructionbtn.Size = new System.Drawing.Size(238, 58);
             this.Instructionbtn.TabIndex = 26;
             this.Instructionbtn.Text = "How to Apply";
             this.Instructionbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -141,9 +143,10 @@
             this.Statusbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 20F);
             this.Statusbtn.ForeColor = System.Drawing.Color.White;
             this.Statusbtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Statusbtn.Location = new System.Drawing.Point(33, 189);
+            this.Statusbtn.Location = new System.Drawing.Point(37, 236);
+            this.Statusbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Statusbtn.Name = "Statusbtn";
-            this.Statusbtn.Size = new System.Drawing.Size(212, 46);
+            this.Statusbtn.Size = new System.Drawing.Size(238, 58);
             this.Statusbtn.TabIndex = 25;
             this.Statusbtn.Text = "Status";
             this.Statusbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -152,7 +155,7 @@
             // 
             // informations
             // 
-            this.informations.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.informations.BackColor = System.Drawing.Color.Transparent;
             this.informations.Controls.Add(this.SubmitButton);
             this.informations.Controls.Add(this.Backbtn);
             this.informations.Controls.Add(this.label8);
@@ -160,10 +163,10 @@
             this.informations.Controls.Add(this.DocumentaryReq);
             this.informations.Controls.Add(this.label2);
             this.informations.Controls.Add(this.ProgramSelection);
-            this.informations.Location = new System.Drawing.Point(299, 21);
+            this.informations.Location = new System.Drawing.Point(336, 26);
             this.informations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.informations.Name = "informations";
-            this.informations.Size = new System.Drawing.Size(862, 612);
+            this.informations.Size = new System.Drawing.Size(970, 765);
             this.informations.TabIndex = 30;
             this.informations.Paint += new System.Windows.Forms.PaintEventHandler(this.informations_Paint);
             // 
@@ -171,10 +174,10 @@
             // 
             this.SubmitButton.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
             this.SubmitButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SubmitButton.Location = new System.Drawing.Point(741, 570);
+            this.SubmitButton.Location = new System.Drawing.Point(834, 712);
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(83, 27);
+            this.SubmitButton.Size = new System.Drawing.Size(93, 34);
             this.SubmitButton.TabIndex = 9;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -185,10 +188,10 @@
             // 
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold);
             this.Backbtn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Backbtn.Location = new System.Drawing.Point(40, 570);
+            this.Backbtn.Location = new System.Drawing.Point(45, 712);
             this.Backbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Backbtn.Name = "Backbtn";
-            this.Backbtn.Size = new System.Drawing.Size(83, 27);
+            this.Backbtn.Size = new System.Drawing.Size(93, 34);
             this.Backbtn.TabIndex = 8;
             this.Backbtn.Text = "Back";
             this.Backbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -202,9 +205,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(55, 270);
+            this.label8.Location = new System.Drawing.Point(62, 338);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(280, 24);
+            this.label8.Size = new System.Drawing.Size(321, 28);
             this.label8.TabIndex = 7;
             this.label8.Text = "  admission request may be rejected. ";
             // 
@@ -215,9 +218,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(55, 248);
+            this.label7.Location = new System.Drawing.Point(62, 310);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(695, 24);
+            this.label7.Size = new System.Drawing.Size(793, 28);
             this.label7.TabIndex = 6;
             this.label7.Text = " Please provide the required documents, ensuring they are clear and readable. Oth" +
     "erwise, your";
@@ -240,11 +243,11 @@
             this.DocumentaryReq.Controls.Add(this.pictureBox1);
             this.DocumentaryReq.Controls.Add(this.label1);
             this.DocumentaryReq.ForeColor = System.Drawing.Color.White;
-            this.DocumentaryReq.Location = new System.Drawing.Point(40, 298);
+            this.DocumentaryReq.Location = new System.Drawing.Point(45, 372);
             this.DocumentaryReq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DocumentaryReq.Name = "DocumentaryReq";
             this.DocumentaryReq.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DocumentaryReq.Size = new System.Drawing.Size(784, 257);
+            this.DocumentaryReq.Size = new System.Drawing.Size(882, 321);
             this.DocumentaryReq.TabIndex = 3;
             this.DocumentaryReq.TabStop = false;
             this.DocumentaryReq.Text = "Documentary Requirements";
@@ -253,10 +256,10 @@
             // 
             this.GMoralButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GMoralButton.ForeColor = System.Drawing.Color.Black;
-            this.GMoralButton.Location = new System.Drawing.Point(592, 226);
+            this.GMoralButton.Location = new System.Drawing.Point(666, 282);
             this.GMoralButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GMoralButton.Name = "GMoralButton";
-            this.GMoralButton.Size = new System.Drawing.Size(69, 20);
+            this.GMoralButton.Size = new System.Drawing.Size(78, 25);
             this.GMoralButton.TabIndex = 19;
             this.GMoralButton.Text = "Upload";
             this.GMoralButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -267,10 +270,10 @@
             // 
             this.BCertButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCertButton.ForeColor = System.Drawing.Color.Black;
-            this.BCertButton.Location = new System.Drawing.Point(592, 115);
+            this.BCertButton.Location = new System.Drawing.Point(666, 144);
             this.BCertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCertButton.Name = "BCertButton";
-            this.BCertButton.Size = new System.Drawing.Size(69, 20);
+            this.BCertButton.Size = new System.Drawing.Size(78, 25);
             this.BCertButton.TabIndex = 18;
             this.BCertButton.Text = "Upload";
             this.BCertButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -281,10 +284,10 @@
             // 
             this.TORButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TORButton.ForeColor = System.Drawing.Color.Black;
-            this.TORButton.Location = new System.Drawing.Point(318, 226);
+            this.TORButton.Location = new System.Drawing.Point(358, 282);
             this.TORButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TORButton.Name = "TORButton";
-            this.TORButton.Size = new System.Drawing.Size(69, 20);
+            this.TORButton.Size = new System.Drawing.Size(78, 25);
             this.TORButton.TabIndex = 17;
             this.TORButton.Text = "Upload";
             this.TORButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -295,10 +298,10 @@
             // 
             this.FormalButton.Font = new System.Drawing.Font("Microsoft Himalaya", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormalButton.ForeColor = System.Drawing.Color.Black;
-            this.FormalButton.Location = new System.Drawing.Point(354, 115);
+            this.FormalButton.Location = new System.Drawing.Point(398, 144);
             this.FormalButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FormalButton.Name = "FormalButton";
-            this.FormalButton.Size = new System.Drawing.Size(69, 20);
+            this.FormalButton.Size = new System.Drawing.Size(78, 25);
             this.FormalButton.TabIndex = 16;
             this.FormalButton.Text = "Upload";
             this.FormalButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -309,10 +312,10 @@
             // 
             this.GoodMorals.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.formal_pic;
             this.GoodMorals.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.GoodMorals.Location = new System.Drawing.Point(581, 140);
+            this.GoodMorals.Location = new System.Drawing.Point(654, 175);
             this.GoodMorals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GoodMorals.Name = "GoodMorals";
-            this.GoodMorals.Size = new System.Drawing.Size(89, 80);
+            this.GoodMorals.Size = new System.Drawing.Size(100, 100);
             this.GoodMorals.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.GoodMorals.TabIndex = 14;
             this.GoodMorals.TabStop = false;
@@ -322,9 +325,9 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(468, 140);
+            this.label12.Location = new System.Drawing.Point(526, 175);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 16);
+            this.label12.Size = new System.Drawing.Size(108, 20);
             this.label12.TabIndex = 13;
             this.label12.Text = "Good Morals :";
             // 
@@ -332,10 +335,10 @@
             // 
             this.BirthCert.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.formal_pic;
             this.BirthCert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BirthCert.Location = new System.Drawing.Point(581, 29);
+            this.BirthCert.Location = new System.Drawing.Point(654, 36);
             this.BirthCert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BirthCert.Name = "BirthCert";
-            this.BirthCert.Size = new System.Drawing.Size(89, 80);
+            this.BirthCert.Size = new System.Drawing.Size(100, 100);
             this.BirthCert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BirthCert.TabIndex = 11;
             this.BirthCert.TabStop = false;
@@ -345,9 +348,9 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(468, 29);
+            this.label11.Location = new System.Drawing.Point(526, 36);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 16);
+            this.label11.Size = new System.Drawing.Size(122, 20);
             this.label11.TabIndex = 10;
             this.label11.Text = "Birth Certificate:";
             // 
@@ -355,10 +358,10 @@
             // 
             this.Record.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.formal_pic;
             this.Record.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Record.Location = new System.Drawing.Point(308, 139);
+            this.Record.Location = new System.Drawing.Point(346, 174);
             this.Record.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Record.Name = "Record";
-            this.Record.Size = new System.Drawing.Size(89, 80);
+            this.Record.Size = new System.Drawing.Size(100, 100);
             this.Record.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Record.TabIndex = 8;
             this.Record.TabStop = false;
@@ -368,9 +371,9 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(111, 140);
+            this.label10.Location = new System.Drawing.Point(125, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 32);
+            this.label10.Size = new System.Drawing.Size(216, 40);
             this.label10.TabIndex = 7;
             this.label10.Text = "Report Card/Rating Form\r\n/Transcript of Records (TOR):";
             // 
@@ -380,9 +383,9 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(247, 111);
+            this.label9.Location = new System.Drawing.Point(278, 139);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 17);
+            this.label9.Size = new System.Drawing.Size(70, 20);
             this.label9.TabIndex = 5;
             this.label9.Text = "Example";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -391,10 +394,10 @@
             // 
             this.FormalPic.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.formal_pic;
             this.FormalPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.FormalPic.Location = new System.Drawing.Point(345, 29);
+            this.FormalPic.Location = new System.Drawing.Point(388, 36);
             this.FormalPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FormalPic.Name = "FormalPic";
-            this.FormalPic.Size = new System.Drawing.Size(89, 80);
+            this.FormalPic.Size = new System.Drawing.Size(100, 100);
             this.FormalPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FormalPic.TabIndex = 4;
             this.FormalPic.TabStop = false;
@@ -404,10 +407,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.Jay__smiling_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(234, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(263, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -416,9 +419,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(111, 29);
+            this.label1.Location = new System.Drawing.Point(125, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 32);
+            this.label1.Size = new System.Drawing.Size(132, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Upload your 1x1 \r\nFORMAL picture:";
             // 
@@ -429,9 +432,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(64, 42);
+            this.label2.Location = new System.Drawing.Point(72, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(531, 24);
+            this.label2.Size = new System.Drawing.Size(607, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Please select ONLY ONE program that you are genuinely interested in.";
             // 
@@ -446,11 +449,11 @@
             this.ProgramSelection.Controls.Add(this.txtCourseBS);
             this.ProgramSelection.Controls.Add(this.label3);
             this.ProgramSelection.ForeColor = System.Drawing.Color.White;
-            this.ProgramSelection.Location = new System.Drawing.Point(40, 66);
+            this.ProgramSelection.Location = new System.Drawing.Point(45, 82);
             this.ProgramSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProgramSelection.Name = "ProgramSelection";
             this.ProgramSelection.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ProgramSelection.Size = new System.Drawing.Size(784, 163);
+            this.ProgramSelection.Size = new System.Drawing.Size(882, 204);
             this.ProgramSelection.TabIndex = 0;
             this.ProgramSelection.TabStop = false;
             this.ProgramSelection.Text = "Program Selection";
@@ -465,10 +468,10 @@
             "Electrical Engineering",
             "Information Technology",
             "Information System"});
-            this.txtCourseDip.Location = new System.Drawing.Point(202, 120);
+            this.txtCourseDip.Location = new System.Drawing.Point(227, 150);
             this.txtCourseDip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCourseDip.Name = "txtCourseDip";
-            this.txtCourseDip.Size = new System.Drawing.Size(457, 24);
+            this.txtCourseDip.Size = new System.Drawing.Size(514, 28);
             this.txtCourseDip.TabIndex = 7;
             this.txtCourseDip.SelectedIndexChanged += new System.EventHandler(this.txtCourseDip_SelectedIndexChanged);
             // 
@@ -477,9 +480,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(133, 122);
+            this.label6.Location = new System.Drawing.Point(150, 152);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 16);
+            this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Diploma:";
             // 
@@ -492,10 +495,10 @@
             "Electronics Engineering",
             "Electrical Engineering",
             "Mechanical Engineering"});
-            this.txtCourseBE.Location = new System.Drawing.Point(301, 90);
+            this.txtCourseBE.Location = new System.Drawing.Point(339, 112);
             this.txtCourseBE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCourseBE.Name = "txtCourseBE";
-            this.txtCourseBE.Size = new System.Drawing.Size(358, 24);
+            this.txtCourseBE.Size = new System.Drawing.Size(402, 28);
             this.txtCourseBE.TabIndex = 5;
             this.txtCourseBE.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -504,9 +507,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(133, 92);
+            this.label5.Location = new System.Drawing.Point(150, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 16);
+            this.label5.Size = new System.Drawing.Size(183, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Bachelor of Engineering:";
             // 
@@ -515,9 +518,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(133, 59);
+            this.label4.Location = new System.Drawing.Point(150, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 16);
+            this.label4.Size = new System.Drawing.Size(155, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Bachelor of Science:";
             // 
@@ -530,10 +533,10 @@
             "Computer Science Major in Data Analysis",
             "Information Technology Major in Network Security",
             "Information System "});
-            this.txtCourseBS.Location = new System.Drawing.Point(276, 59);
+            this.txtCourseBS.Location = new System.Drawing.Point(310, 74);
             this.txtCourseBS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCourseBS.Name = "txtCourseBS";
-            this.txtCourseBS.Size = new System.Drawing.Size(383, 24);
+            this.txtCourseBS.Size = new System.Drawing.Size(431, 28);
             this.txtCourseBS.TabIndex = 2;
             this.txtCourseBS.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -542,19 +545,19 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(82, 31);
+            this.label3.Location = new System.Drawing.Point(92, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 16);
+            this.label3.Size = new System.Drawing.Size(221, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Choose your desired program:";
             // 
             // ApplicationForm2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.default_bg;
+            this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.ADMISSION_SYSTEM__2_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(1330, 816);
             this.Controls.Add(this.informations);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.Logout);

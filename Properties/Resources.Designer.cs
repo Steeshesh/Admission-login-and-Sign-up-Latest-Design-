@@ -103,6 +103,16 @@ namespace Admission_login_and_Sign_up__Latest_Design_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ADMISSION_SYSTEM__2_ {
+            get {
+                object obj = ResourceManager.GetObject("ADMISSION SYSTEM (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_bg {
             get {
                 object obj = ResourceManager.GetObject("default_bg", resourceCulture);

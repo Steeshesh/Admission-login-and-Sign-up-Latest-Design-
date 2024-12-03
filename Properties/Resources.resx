@@ -157,13 +157,16 @@
   <data name="ADMISSION SYSTEM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADMISSION SYSTEM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ADMISSION SYSTEM (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADMISSION SYSTEM (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="formal_pic1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formal_pic1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ADMISSION SYSEM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ADMISSION SYSEM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ADMISSION SYSTEM (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ADMISSION SYSTEM (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ADMISSION SYSTEM (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADMISSION SYSTEM (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

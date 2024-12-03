@@ -35,16 +35,15 @@
             this.Logout = new System.Windows.Forms.PictureBox();
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,35 +127,23 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Myanmar Text", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(371, 152);
+            this.label11.Location = new System.Drawing.Point(381, 151);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(417, 168);
+            this.label11.Size = new System.Drawing.Size(394, 174);
             this.label11.TabIndex = 16;
             this.label11.Text = resources.GetString("label11.Text");
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Himalaya", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(456, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(223, 32);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "For College Admissions";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(359, 70);
+            this.label2.Location = new System.Drawing.Point(359, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 48);
+            this.label2.Size = new System.Drawing.Size(143, 41);
             this.label2.TabIndex = 15;
             this.label2.Text = "Deadline";
             // 
@@ -164,11 +151,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(359, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 48);
+            this.label1.Size = new System.Drawing.Size(319, 41);
             this.label1.TabIndex = 11;
             this.label1.Text = "Important Dates and ";
             // 
@@ -187,11 +174,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(369, 130);
+            this.label7.Location = new System.Drawing.Point(366, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(305, 28);
+            this.label7.Size = new System.Drawing.Size(325, 32);
             this.label7.TabIndex = 13;
             this.label7.Text = "Incoming First Year/Freshmen Students";
             // 
@@ -199,63 +186,62 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Himalaya", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(953, 103);
+            this.label3.Location = new System.Drawing.Point(860, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 32);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "For College Admissions";
+            this.label3.Size = new System.Drawing.Size(143, 41);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Deadline";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Myanmar Text", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(856, 69);
+            this.label4.Location = new System.Drawing.Point(882, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 48);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Deadline";
+            this.label4.Size = new System.Drawing.Size(379, 145);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "* Application Opening: January 2025- February 2025\r\n* Application Deadline: Febru" +
+    "ary 15,2025 – April 15,\r\n  2025\r\n* Entrance Exam Deadline: March 15, 2025\r\n* Enr" +
+    "ollment Confirmation Deadline: May–June";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(860, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(319, 41);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Important Dates and ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(856, 34);
+            this.label6.Location = new System.Drawing.Point(885, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(310, 48);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Important Dates and ";
+            this.label6.Size = new System.Drawing.Size(0, 28);
+            this.label6.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(881, 151);
+            this.label8.Location = new System.Drawing.Point(867, 121);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(403, 140);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "*Application Opening: January 2025- February 2025\r\n*Application Deadline: Februar" +
-    "y 15,2025 – April 15,\r\n 2025\r\n*Entrance Exam Deadline: March 15, 2025\r\n*Enrollme" +
-    "nt Confirmation Deadline: May–June\r\n";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Himalaya", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(866, 129);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(277, 28);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Second Courser/Transferee Students";
+            this.label8.Size = new System.Drawing.Size(302, 32);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Second Courser/Transferee Students";
             // 
             // DefaultPage
             // 
@@ -267,12 +253,11 @@
             this.ClientSize = new System.Drawing.Size(1330, 816);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.label9);
@@ -301,15 +286,14 @@
         private System.Windows.Forms.PictureBox Logout;
         private System.Windows.Forms.LinkLabel LogoutLink;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label10;
     }
 }

@@ -34,28 +34,6 @@
             this.Applybtn = new System.Windows.Forms.Button();
             this.Instructionbtn = new System.Windows.Forms.Button();
             this.Statusbtn = new System.Windows.Forms.Button();
-            this.Nextbtn = new System.Windows.Forms.Panel();
-            this.NextButton = new System.Windows.Forms.Button();
-            this.EducBack = new System.Windows.Forms.GroupBox();
-            this.GWA = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.Strand = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.HSAddress = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.HSName = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.Contactinfo = new System.Windows.Forms.GroupBox();
-            this.GuardianNum = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.HomeAdd = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.EmailAdd = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.PhoneNum = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Personalinfo = new System.Windows.Forms.GroupBox();
             this.FatherName = new System.Windows.Forms.TextBox();
             this.Nationality = new System.Windows.Forms.TextBox();
@@ -76,11 +54,33 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Contactinfo = new System.Windows.Forms.GroupBox();
+            this.GuardianNum = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.HomeAdd = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.EmailAdd = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.PhoneNum = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.EducBack = new System.Windows.Forms.GroupBox();
+            this.GWA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Strand = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.HSAddress = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.HSName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.Nextbtn = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
-            this.Nextbtn.SuspendLayout();
-            this.EducBack.SuspendLayout();
-            this.Contactinfo.SuspendLayout();
             this.Personalinfo.SuspendLayout();
+            this.Contactinfo.SuspendLayout();
+            this.EducBack.SuspendLayout();
+            this.Nextbtn.SuspendLayout();
             this.SuspendLayout();
             // 
             // LogoutLink
@@ -127,172 +127,6 @@
             this.Statusbtn.Name = "Statusbtn";
             this.Statusbtn.UseVisualStyleBackColor = false;
             this.Statusbtn.Click += new System.EventHandler(this.Statusbtn_Click);
-            // 
-            // Nextbtn
-            // 
-            this.Nextbtn.BackColor = System.Drawing.Color.DimGray;
-            this.Nextbtn.Controls.Add(this.NextButton);
-            this.Nextbtn.Controls.Add(this.EducBack);
-            this.Nextbtn.Controls.Add(this.Contactinfo);
-            this.Nextbtn.Controls.Add(this.label2);
-            this.Nextbtn.Controls.Add(this.label1);
-            this.Nextbtn.Controls.Add(this.Personalinfo);
-            resources.ApplyResources(this.Nextbtn, "Nextbtn");
-            this.Nextbtn.Name = "Nextbtn";
-            // 
-            // NextButton
-            // 
-            resources.ApplyResources(this.NextButton, "NextButton");
-            this.NextButton.Name = "NextButton";
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
-            // EducBack
-            // 
-            this.EducBack.BackColor = System.Drawing.Color.Transparent;
-            this.EducBack.Controls.Add(this.GWA);
-            this.EducBack.Controls.Add(this.label14);
-            this.EducBack.Controls.Add(this.Strand);
-            this.EducBack.Controls.Add(this.label15);
-            this.EducBack.Controls.Add(this.HSAddress);
-            this.EducBack.Controls.Add(this.label16);
-            this.EducBack.Controls.Add(this.HSName);
-            this.EducBack.Controls.Add(this.label17);
-            this.EducBack.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.EducBack, "EducBack");
-            this.EducBack.Name = "EducBack";
-            this.EducBack.TabStop = false;
-            // 
-            // GWA
-            // 
-            resources.ApplyResources(this.GWA, "GWA");
-            this.GWA.Name = "GWA";
-            this.GWA.TextChanged += new System.EventHandler(this.GWA_TextChanged);
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Name = "label14";
-            // 
-            // Strand
-            // 
-            resources.ApplyResources(this.Strand, "Strand");
-            this.Strand.Name = "Strand";
-            this.Strand.TextChanged += new System.EventHandler(this.Strand_TextChanged);
-            // 
-            // label15
-            // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Name = "label15";
-            // 
-            // HSAddress
-            // 
-            resources.ApplyResources(this.HSAddress, "HSAddress");
-            this.HSAddress.Name = "HSAddress";
-            this.HSAddress.TextChanged += new System.EventHandler(this.HSAddress_TextChanged);
-            // 
-            // label16
-            // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Name = "label16";
-            // 
-            // HSName
-            // 
-            resources.ApplyResources(this.HSName, "HSName");
-            this.HSName.Name = "HSName";
-            this.HSName.TextChanged += new System.EventHandler(this.HSName_TextChanged);
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Name = "label17";
-            // 
-            // Contactinfo
-            // 
-            this.Contactinfo.BackColor = System.Drawing.Color.Transparent;
-            this.Contactinfo.Controls.Add(this.GuardianNum);
-            this.Contactinfo.Controls.Add(this.label13);
-            this.Contactinfo.Controls.Add(this.HomeAdd);
-            this.Contactinfo.Controls.Add(this.label12);
-            this.Contactinfo.Controls.Add(this.EmailAdd);
-            this.Contactinfo.Controls.Add(this.label11);
-            this.Contactinfo.Controls.Add(this.PhoneNum);
-            this.Contactinfo.Controls.Add(this.label10);
-            this.Contactinfo.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.Contactinfo, "Contactinfo");
-            this.Contactinfo.Name = "Contactinfo";
-            this.Contactinfo.TabStop = false;
-            // 
-            // GuardianNum
-            // 
-            resources.ApplyResources(this.GuardianNum, "GuardianNum");
-            this.GuardianNum.Name = "GuardianNum";
-            this.GuardianNum.TextChanged += new System.EventHandler(this.GuardianNum_TextChanged);
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Name = "label13";
-            // 
-            // HomeAdd
-            // 
-            resources.ApplyResources(this.HomeAdd, "HomeAdd");
-            this.HomeAdd.Name = "HomeAdd";
-            this.HomeAdd.TextChanged += new System.EventHandler(this.HomeAdd_TextChanged);
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Name = "label12";
-            // 
-            // EmailAdd
-            // 
-            this.EmailAdd.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            resources.ApplyResources(this.EmailAdd, "EmailAdd");
-            this.EmailAdd.Name = "EmailAdd";
-            this.EmailAdd.TextChanged += new System.EventHandler(this.EmailAdd_TextChanged);
-            this.EmailAdd.Enter += new System.EventHandler(this.EmailAdd_Enter);
-            this.EmailAdd.Leave += new System.EventHandler(this.EmailAdd_Leave);
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Name = "label11";
-            // 
-            // PhoneNum
-            // 
-            resources.ApplyResources(this.PhoneNum, "PhoneNum");
-            this.PhoneNum.Name = "PhoneNum";
-            this.PhoneNum.TextChanged += new System.EventHandler(this.PhoneNum_TextChanged);
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Name = "label10";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Personalinfo
             // 
@@ -451,11 +285,178 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Name = "label3";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Name = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // Contactinfo
+            // 
+            this.Contactinfo.BackColor = System.Drawing.Color.Transparent;
+            this.Contactinfo.Controls.Add(this.GuardianNum);
+            this.Contactinfo.Controls.Add(this.label13);
+            this.Contactinfo.Controls.Add(this.HomeAdd);
+            this.Contactinfo.Controls.Add(this.label12);
+            this.Contactinfo.Controls.Add(this.EmailAdd);
+            this.Contactinfo.Controls.Add(this.label11);
+            this.Contactinfo.Controls.Add(this.PhoneNum);
+            this.Contactinfo.Controls.Add(this.label10);
+            this.Contactinfo.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.Contactinfo, "Contactinfo");
+            this.Contactinfo.Name = "Contactinfo";
+            this.Contactinfo.TabStop = false;
+            // 
+            // GuardianNum
+            // 
+            resources.ApplyResources(this.GuardianNum, "GuardianNum");
+            this.GuardianNum.Name = "GuardianNum";
+            this.GuardianNum.TextChanged += new System.EventHandler(this.GuardianNum_TextChanged);
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Name = "label13";
+            // 
+            // HomeAdd
+            // 
+            resources.ApplyResources(this.HomeAdd, "HomeAdd");
+            this.HomeAdd.Name = "HomeAdd";
+            this.HomeAdd.TextChanged += new System.EventHandler(this.HomeAdd_TextChanged);
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Name = "label12";
+            // 
+            // EmailAdd
+            // 
+            this.EmailAdd.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            resources.ApplyResources(this.EmailAdd, "EmailAdd");
+            this.EmailAdd.Name = "EmailAdd";
+            this.EmailAdd.TextChanged += new System.EventHandler(this.EmailAdd_TextChanged);
+            this.EmailAdd.Enter += new System.EventHandler(this.EmailAdd_Enter);
+            this.EmailAdd.Leave += new System.EventHandler(this.EmailAdd_Leave);
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Name = "label11";
+            // 
+            // PhoneNum
+            // 
+            resources.ApplyResources(this.PhoneNum, "PhoneNum");
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.TextChanged += new System.EventHandler(this.PhoneNum_TextChanged);
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Name = "label10";
+            // 
+            // EducBack
+            // 
+            this.EducBack.BackColor = System.Drawing.Color.Transparent;
+            this.EducBack.Controls.Add(this.GWA);
+            this.EducBack.Controls.Add(this.label14);
+            this.EducBack.Controls.Add(this.Strand);
+            this.EducBack.Controls.Add(this.label15);
+            this.EducBack.Controls.Add(this.HSAddress);
+            this.EducBack.Controls.Add(this.label16);
+            this.EducBack.Controls.Add(this.HSName);
+            this.EducBack.Controls.Add(this.label17);
+            this.EducBack.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.EducBack, "EducBack");
+            this.EducBack.Name = "EducBack";
+            this.EducBack.TabStop = false;
+            // 
+            // GWA
+            // 
+            resources.ApplyResources(this.GWA, "GWA");
+            this.GWA.Name = "GWA";
+            this.GWA.TextChanged += new System.EventHandler(this.GWA_TextChanged);
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Name = "label14";
+            // 
+            // Strand
+            // 
+            resources.ApplyResources(this.Strand, "Strand");
+            this.Strand.Name = "Strand";
+            this.Strand.TextChanged += new System.EventHandler(this.Strand_TextChanged);
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Name = "label15";
+            // 
+            // HSAddress
+            // 
+            resources.ApplyResources(this.HSAddress, "HSAddress");
+            this.HSAddress.Name = "HSAddress";
+            this.HSAddress.TextChanged += new System.EventHandler(this.HSAddress_TextChanged);
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Name = "label16";
+            // 
+            // HSName
+            // 
+            resources.ApplyResources(this.HSName, "HSName");
+            this.HSName.Name = "HSName";
+            this.HSName.TextChanged += new System.EventHandler(this.HSName_TextChanged);
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Name = "label17";
+            // 
+            // NextButton
+            // 
+            resources.ApplyResources(this.NextButton, "NextButton");
+            this.NextButton.Name = "NextButton";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // Nextbtn
+            // 
+            this.Nextbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Nextbtn.Controls.Add(this.NextButton);
+            this.Nextbtn.Controls.Add(this.EducBack);
+            this.Nextbtn.Controls.Add(this.Contactinfo);
+            this.Nextbtn.Controls.Add(this.label2);
+            this.Nextbtn.Controls.Add(this.label1);
+            this.Nextbtn.Controls.Add(this.Personalinfo);
+            resources.ApplyResources(this.Nextbtn, "Nextbtn");
+            this.Nextbtn.Name = "Nextbtn";
+            this.Nextbtn.Paint += new System.Windows.Forms.PaintEventHandler(this.Nextbtn_Paint);
+            // 
             // ApplicationForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.default_bg;
+            this.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.ADMISSION_SYSTEM__2_;
             this.Controls.Add(this.Nextbtn);
             this.Controls.Add(this.LogoutLink);
             this.Controls.Add(this.Logout);
@@ -466,14 +467,14 @@
             this.Name = "ApplicationForm";
             this.Load += new System.EventHandler(this.ApplicationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).EndInit();
-            this.Nextbtn.ResumeLayout(false);
-            this.Nextbtn.PerformLayout();
-            this.EducBack.ResumeLayout(false);
-            this.EducBack.PerformLayout();
-            this.Contactinfo.ResumeLayout(false);
-            this.Contactinfo.PerformLayout();
             this.Personalinfo.ResumeLayout(false);
             this.Personalinfo.PerformLayout();
+            this.Contactinfo.ResumeLayout(false);
+            this.Contactinfo.PerformLayout();
+            this.EducBack.ResumeLayout(false);
+            this.EducBack.PerformLayout();
+            this.Nextbtn.ResumeLayout(false);
+            this.Nextbtn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,25 +487,37 @@
         private System.Windows.Forms.Button Applybtn;
         private System.Windows.Forms.Button Instructionbtn;
         private System.Windows.Forms.Button Statusbtn;
-        private System.Windows.Forms.Panel Nextbtn;
         private System.Windows.Forms.GroupBox Personalinfo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox FatherName;
+        private System.Windows.Forms.TextBox Nationality;
+        private System.Windows.Forms.TextBox DateOfBirth;
+        private System.Windows.Forms.RadioButton MaleButton;
+        private System.Windows.Forms.TextBox FirstName;
+        private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox MiddleName;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox GuardianName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox MotherName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton FemaleButton;
-        private System.Windows.Forms.TextBox MotherName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox Contactinfo;
+        private System.Windows.Forms.TextBox GuardianNum;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox HomeAdd;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox EmailAdd;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox PhoneNum;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox GuardianName;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox EducBack;
         private System.Windows.Forms.TextBox GWA;
         private System.Windows.Forms.Label label14;
@@ -514,19 +527,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox HSName;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox GuardianNum;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox HomeAdd;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox MiddleName;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox LastName;
-        private System.Windows.Forms.TextBox FirstName;
-        private System.Windows.Forms.RadioButton MaleButton;
-        private System.Windows.Forms.TextBox DateOfBirth;
-        private System.Windows.Forms.TextBox Nationality;
-        private System.Windows.Forms.TextBox FatherName;
         private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Panel Nextbtn;
     }
 }

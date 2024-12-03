@@ -65,9 +65,9 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void informations_Paint(object sender, PaintEventArgs e)
         {
-            using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
+            //using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
             {
-                e.Graphics.FillRectangle(brush, informations.ClientRectangle);
+               // e.Graphics.FillRectangle(brush, informations.ClientRectangle);
             }
         }
 

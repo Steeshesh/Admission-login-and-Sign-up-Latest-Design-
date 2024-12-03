@@ -144,7 +144,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         // Empty Event Handlers (Retained for Future Use)
         private void Logout_Click(object sender, EventArgs e) { }
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) { }
-        private void Nextbtn_Paint(object sender, PaintEventArgs e) { ExamForm.BackColor = Color.FromArgb(150, Color.Black); }
+        private void Nextbtn_Paint(object sender, PaintEventArgs e) { }
         private void AdmissionExam_Load(object sender, EventArgs e) { }
         private void lbltimebox_Click(object sender, EventArgs e) { }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
