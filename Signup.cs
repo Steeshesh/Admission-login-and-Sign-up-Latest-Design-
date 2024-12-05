@@ -128,7 +128,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             string insertAcademicQuery = "INSERT INTO academic (UserID, HighSchoolName, HighSchoolAddress, Strand, GeneralWeightedAverage) VALUES (@userId, NULL, NULL, NULL, NULL)";
             string insertContactQuery = "INSERT INTO contact (UserID, PhoneNo, EmailAddress, HomeAddress, GuardiansNo) VALUES (@userId, NULL, NULL, NULL, NULL)";
             string insertDocReqsQuery = "INSERT INTO docreqs (UserID, FormalPicture, BirthCertificate, TranscriptOfRecords, GoodMorals) VALUES (@userId, NULL, NULL, NULL, NULL)";
-            string insertProgramQuery = "INSERT INTO program (UserID, ProgramType, ProgramName) VALUES (@userId, NULL, NULL)";
+            string insertProgramQuery = "INSERT INTO program (UserID, ProgramName) VALUES (@userId, NULL)";
 
             bool academicInserted = database.ExecuteQuery(insertAcademicQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
             bool contactInserted = database.ExecuteQuery(insertContactQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
