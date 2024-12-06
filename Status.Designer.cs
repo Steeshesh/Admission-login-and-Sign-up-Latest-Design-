@@ -38,14 +38,14 @@
             this.fullName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SimpleInfos = new System.Windows.Forms.TableLayoutPanel();
-            this.applicationStatusLB = new System.Windows.Forms.Label();
-            this.applicationStatus = new System.Windows.Forms.Label();
+            this.requirementsStatusLB = new System.Windows.Forms.Label();
+            this.requirementStatus = new System.Windows.Forms.Label();
             this.documentationStatusLB = new System.Windows.Forms.Label();
             this.documentationStat = new System.Windows.Forms.Label();
-            this.examinationScoreLB = new System.Windows.Forms.Label();
-            this.examinationScore = new System.Windows.Forms.Label();
+            this.examinationStatusLB = new System.Windows.Forms.Label();
+            this.examinationStatus = new System.Windows.Forms.Label();
             this.programLB = new System.Windows.Forms.Label();
-            this.program = new System.Windows.Forms.Label();
+            this.ChosenProgram = new System.Windows.Forms.Label();
             this.studentIDLB = new System.Windows.Forms.Label();
             this.studentID = new System.Windows.Forms.Label();
             this.studentPic = new System.Windows.Forms.PictureBox();
@@ -185,14 +185,14 @@
             this.SimpleInfos.ColumnCount = 2;
             this.SimpleInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.05917F));
             this.SimpleInfos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.94083F));
-            this.SimpleInfos.Controls.Add(this.applicationStatusLB, 0, 0);
-            this.SimpleInfos.Controls.Add(this.applicationStatus, 1, 0);
+            this.SimpleInfos.Controls.Add(this.requirementsStatusLB, 0, 0);
+            this.SimpleInfos.Controls.Add(this.requirementStatus, 1, 0);
             this.SimpleInfos.Controls.Add(this.documentationStatusLB, 0, 1);
             this.SimpleInfos.Controls.Add(this.documentationStat, 1, 1);
-            this.SimpleInfos.Controls.Add(this.examinationScoreLB, 0, 2);
-            this.SimpleInfos.Controls.Add(this.examinationScore, 1, 2);
+            this.SimpleInfos.Controls.Add(this.examinationStatusLB, 0, 2);
+            this.SimpleInfos.Controls.Add(this.examinationStatus, 1, 2);
             this.SimpleInfos.Controls.Add(this.programLB, 0, 3);
-            this.SimpleInfos.Controls.Add(this.program, 1, 3);
+            this.SimpleInfos.Controls.Add(this.ChosenProgram, 1, 3);
             this.SimpleInfos.Controls.Add(this.studentIDLB, 0, 4);
             this.SimpleInfos.Controls.Add(this.studentID, 1, 4);
             this.SimpleInfos.Location = new System.Drawing.Point(60, 178);
@@ -204,34 +204,35 @@
             this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.SimpleInfos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.SimpleInfos.Size = new System.Drawing.Size(751, 370);
             this.SimpleInfos.TabIndex = 0;
             // 
-            // applicationStatusLB
+            // requirementsStatusLB
             // 
-            this.applicationStatusLB.AutoSize = true;
-            this.applicationStatusLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.applicationStatusLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applicationStatusLB.ForeColor = System.Drawing.Color.White;
-            this.applicationStatusLB.Location = new System.Drawing.Point(6, 3);
-            this.applicationStatusLB.Name = "applicationStatusLB";
-            this.applicationStatusLB.Size = new System.Drawing.Size(365, 71);
-            this.applicationStatusLB.TabIndex = 0;
-            this.applicationStatusLB.Text = "Application Status:";
-            this.applicationStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.requirementsStatusLB.AutoSize = true;
+            this.requirementsStatusLB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requirementsStatusLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requirementsStatusLB.ForeColor = System.Drawing.Color.White;
+            this.requirementsStatusLB.Location = new System.Drawing.Point(6, 3);
+            this.requirementsStatusLB.Name = "requirementsStatusLB";
+            this.requirementsStatusLB.Size = new System.Drawing.Size(365, 71);
+            this.requirementsStatusLB.TabIndex = 0;
+            this.requirementsStatusLB.Text = "Requirements Status:";
+            this.requirementsStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // applicationStatus
+            // requirementStatus
             // 
-            this.applicationStatus.AutoSize = true;
-            this.applicationStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.applicationStatus.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applicationStatus.ForeColor = System.Drawing.Color.White;
-            this.applicationStatus.Location = new System.Drawing.Point(380, 3);
-            this.applicationStatus.Name = "applicationStatus";
-            this.applicationStatus.Size = new System.Drawing.Size(365, 71);
-            this.applicationStatus.TabIndex = 1;
-            this.applicationStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.applicationStatus.Click += new System.EventHandler(this.applicationStatus_Click_1);
+            this.requirementStatus.AutoSize = true;
+            this.requirementStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requirementStatus.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requirementStatus.ForeColor = System.Drawing.Color.White;
+            this.requirementStatus.Location = new System.Drawing.Point(380, 3);
+            this.requirementStatus.Name = "requirementStatus";
+            this.requirementStatus.Size = new System.Drawing.Size(365, 71);
+            this.requirementStatus.TabIndex = 1;
+            this.requirementStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.requirementStatus.Click += new System.EventHandler(this.applicationStatus_Click_1);
             // 
             // documentationStatusLB
             // 
@@ -258,30 +259,30 @@
             this.documentationStat.TabIndex = 3;
             this.documentationStat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // examinationScoreLB
+            // examinationStatusLB
             // 
-            this.examinationScoreLB.AutoSize = true;
-            this.examinationScoreLB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.examinationScoreLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.examinationScoreLB.ForeColor = System.Drawing.Color.White;
-            this.examinationScoreLB.Location = new System.Drawing.Point(6, 151);
-            this.examinationScoreLB.Name = "examinationScoreLB";
-            this.examinationScoreLB.Size = new System.Drawing.Size(365, 75);
-            this.examinationScoreLB.TabIndex = 4;
-            this.examinationScoreLB.Text = "Examination Score: ";
-            this.examinationScoreLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.examinationStatusLB.AutoSize = true;
+            this.examinationStatusLB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.examinationStatusLB.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.examinationStatusLB.ForeColor = System.Drawing.Color.White;
+            this.examinationStatusLB.Location = new System.Drawing.Point(6, 151);
+            this.examinationStatusLB.Name = "examinationStatusLB";
+            this.examinationStatusLB.Size = new System.Drawing.Size(365, 75);
+            this.examinationStatusLB.TabIndex = 4;
+            this.examinationStatusLB.Text = "Examination Status: ";
+            this.examinationStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // examinationScore
+            // examinationStatus
             // 
-            this.examinationScore.AutoSize = true;
-            this.examinationScore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.examinationScore.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.examinationScore.ForeColor = System.Drawing.Color.White;
-            this.examinationScore.Location = new System.Drawing.Point(380, 151);
-            this.examinationScore.Name = "examinationScore";
-            this.examinationScore.Size = new System.Drawing.Size(365, 75);
-            this.examinationScore.TabIndex = 5;
-            this.examinationScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.examinationStatus.AutoSize = true;
+            this.examinationStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.examinationStatus.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.examinationStatus.ForeColor = System.Drawing.Color.White;
+            this.examinationStatus.Location = new System.Drawing.Point(380, 151);
+            this.examinationStatus.Name = "examinationStatus";
+            this.examinationStatus.Size = new System.Drawing.Size(365, 75);
+            this.examinationStatus.TabIndex = 5;
+            this.examinationStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // programLB
             // 
@@ -296,17 +297,17 @@
             this.programLB.Text = "Program:";
             this.programLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // program
+            // ChosenProgram
             // 
-            this.program.AutoSize = true;
-            this.program.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.program.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.program.ForeColor = System.Drawing.Color.White;
-            this.program.Location = new System.Drawing.Point(380, 229);
-            this.program.Name = "program";
-            this.program.Size = new System.Drawing.Size(365, 70);
-            this.program.TabIndex = 7;
-            this.program.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChosenProgram.AutoSize = true;
+            this.ChosenProgram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChosenProgram.Font = new System.Drawing.Font("Microsoft Himalaya", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChosenProgram.ForeColor = System.Drawing.Color.White;
+            this.ChosenProgram.Location = new System.Drawing.Point(380, 229);
+            this.ChosenProgram.Name = "ChosenProgram";
+            this.ChosenProgram.Size = new System.Drawing.Size(365, 70);
+            this.ChosenProgram.TabIndex = 7;
+            this.ChosenProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentIDLB
             // 
@@ -333,6 +334,7 @@
             this.studentID.Size = new System.Drawing.Size(365, 65);
             this.studentID.TabIndex = 9;
             this.studentID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.studentID.Click += new System.EventHandler(this.studentID_Click);
             // 
             // studentPic
             // 
@@ -388,14 +390,14 @@
         private System.Windows.Forms.PictureBox studentPic;
         private System.Windows.Forms.Label fullName;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label applicationStatusLB;
-        private System.Windows.Forms.Label applicationStatus;
+        private System.Windows.Forms.Label requirementsStatusLB;
+        private System.Windows.Forms.Label requirementStatus;
         private System.Windows.Forms.Label documentationStatusLB;
         private System.Windows.Forms.Label documentationStat;
-        private System.Windows.Forms.Label examinationScoreLB;
-        private System.Windows.Forms.Label examinationScore;
+        private System.Windows.Forms.Label examinationStatusLB;
+        private System.Windows.Forms.Label examinationStatus;
         private System.Windows.Forms.Label programLB;
-        private System.Windows.Forms.Label program;
+        private System.Windows.Forms.Label ChosenProgram;
         private System.Windows.Forms.Label studentIDLB;
         private System.Windows.Forms.Label studentID;
         private System.Windows.Forms.Button TakeExamButton;

@@ -23,7 +23,9 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private void Status_Load(object sender, EventArgs e)
         {
             string firstName = GetUserFirstName(UserSession.UserID);
-            string appStat = GetUserApplicationStatus(UserSession.UserID);
+            string reqStat = GetUserRequirementsStatus(UserSession.UserID);
+            string user_studentID = GetUserID(UserSession.UserID);
+            string programName = GetChosenProgram(UserSession.UserID);
 
             if (firstName == "")
             {
@@ -34,14 +36,35 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 fullName.Text = "Welcome, " + firstName;
             }
 
-            if (appStat == "")
+            if (reqStat == "")
             {
-                applicationStatus.Text = "No submission";
+                requirementStatus.Text = "No submission";
             }
             else 
             {
-                applicationStatus.Text = appStat;
+                requirementStatus.Text = reqStat;
             }
+
+            if (user_studentID == "")
+            {
+                studentID.Text = "";
+            }
+            else 
+            {
+                studentID.Text = user_studentID;
+            }
+
+            if (programName == "")
+            {
+                ChosenProgram.Text = "No Submission";
+            }
+            else
+            {
+                ChosenProgram.Text = programName;
+            }
+
+            // Set the visibility of the Take Exam button
+            TakeExamButton.Visible = reqStat == "Approved";
         }
 
         private void Instructionbtn_Click(object sender, EventArgs e)
@@ -95,9 +118,9 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             return result?.ToString(); // Return the FirstName if found
         }
 
-        private string GetUserApplicationStatus(int userId) 
+        private string GetUserRequirementsStatus(int userId) 
         {
-            string query_stat = "SELECT AppStatus FROM user WHERE UserID = @userID";
+            string query_stat = "SELECT ReqStatus FROM user WHERE UserID = @userID";
             object result = database.ExecuteScalar(query_stat, cmd =>
             {
                 cmd.Parameters.AddWithValue("@userID", userId);
@@ -106,6 +129,27 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             return result?.ToString();
         }
 
+        private string GetUserID(int userId)
+        {
+            string query_id = "SELECT UserID FROM user WHERE UserID = @userID";
+            object result = database.ExecuteScalar(query_id, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@userID", userId);
+            });
+
+            return result?.ToString();
+        }
+
+        private string GetChosenProgram(int userId) 
+        {
+            string query_program = "SELECT ProgramName FROM program WHERE UserID = @userID";
+            object result = database.ExecuteScalar(query_program, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@userID", userId);
+            });
+
+            return result?.ToString();
+        }
         private void informations_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -118,6 +162,11 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         }
 
         private void applicationStatus_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studentID_Click(object sender, EventArgs e)
         {
 
         }

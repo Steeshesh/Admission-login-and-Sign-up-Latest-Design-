@@ -6,6 +6,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class ApplicationForm2 : Form
     {
+        private Database db = new Database();
+
         public ApplicationForm2()
         {
             InitializeComponent();
@@ -41,9 +43,11 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            if (!IsDocumentUploaded(FormalPic) || !IsDocumentUploaded(Record) || !IsDocumentUploaded(BirthCert) || !IsDocumentUploaded(GoodMorals))
+            if (!IsDocumentUploaded(FormalPic) || !IsDocumentUploaded(Record) ||
+                !IsDocumentUploaded(BirthCert) || !IsDocumentUploaded(GoodMorals))
             {
-                MessageBox.Show("Please upload all required documents before proceeding.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please upload all required documents before proceeding.",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 if (!IsDocumentUploaded(FormalPic)) FormalButton.Focus();
                 else if (!IsDocumentUploaded(Record)) TORButton.Focus();
@@ -52,11 +56,41 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
             else
             {
-                MessageBox.Show("All required files are uploaded. Proceeding to Status.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new Status().Show();
-                this.Hide();
+                // Update document requirements
+                bool docReqUpdated = db.ExecuteQuery(
+                    "UPDATE docreqs SET FormalPicture = @FormalPicture, BirthCertificate = @BirthCertificate, TranscriptOfRecords = @TranscriptOfRecords, GoodMorals = @GoodMorals WHERE UserID = @UserID",
+                    cmd =>
+                    {
+                        cmd.Parameters.AddWithValue("@UserID", UserSession.UserID);
+                        cmd.Parameters.AddWithValue("@FormalPicture", FormalPic.ImageLocation);
+                        cmd.Parameters.AddWithValue("@BirthCertificate", BirthCert.ImageLocation);
+                        cmd.Parameters.AddWithValue("@TranscriptOfRecords", Record.ImageLocation);
+                        cmd.Parameters.AddWithValue("@GoodMorals", GoodMorals.ImageLocation);
+                    });
+
+                // Update program selection
+                bool programUpdated = db.ExecuteQuery(
+                    "UPDATE program SET ProgramName = @ProgramName WHERE UserID = @UserID",
+                    cmd =>
+                    {
+                        cmd.Parameters.AddWithValue("@UserID", UserSession.UserID);
+                        cmd.Parameters.AddWithValue("@ProgramName", ProgramName.Text);
+                    });
+
+                // Verify success and notify user
+                if (docReqUpdated && programUpdated)
+                {
+                    MessageBox.Show("Application submitted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new Status().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to submit application. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
 
         private bool IsDocumentUploaded(PictureBox pictureBox)
         {
@@ -119,11 +153,13 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         // Retained empty event handlers and methods to avoid breaking references in other parts of the code
         private void ApplicationForm2_Load(object sender, EventArgs e) { }
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
         private void label9_Click(object sender, EventArgs e) { }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
         private void ProgramSelection_Enter(object sender, EventArgs e) { }
-        private void txtCourseDip_SelectedIndexChanged(object sender, EventArgs e) { }
         private void FormalPic_Click(object sender, EventArgs e) { }
+
+        private void ProgramName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
