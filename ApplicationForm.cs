@@ -232,7 +232,7 @@
             string updateUserQuery = @"UPDATE user 
                                SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, 
                                    Gender = @Gender, DateOfBirth = @DateOfBirth, Nationality = @Nationality, 
-                                   FathersName = @FathersName, MothersName = @MothersName, GuardiansName = @GuardiansName
+                                   FathersName = @FathersName, MothersName = @MothersName, GuardiansName = @GuardiansName, AppStatus = 'Pending'
                                WHERE UserID = @UserID";
 
             string updateAcademicQuery = @"UPDATE academic 

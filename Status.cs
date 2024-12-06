@@ -23,9 +23,25 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private void Status_Load(object sender, EventArgs e)
         {
             string firstName = GetUserFirstName(UserSession.UserID);
+            string appStat = GetUserApplicationStatus(UserSession.UserID);
 
-            fullName.Text = "Welcome, " + firstName;
+            if (firstName == "")
+            {
+                fullName.Text = "Welcome!";
+            }
+            else
+            {
+                fullName.Text = "Welcome, " + firstName;
+            }
 
+            if (appStat == "")
+            {
+                applicationStatus.Text = "No submission";
+            }
+            else 
+            {
+                applicationStatus.Text = appStat;
+            }
         }
 
         private void Instructionbtn_Click(object sender, EventArgs e)
@@ -79,6 +95,17 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             return result?.ToString(); // Return the FirstName if found
         }
 
+        private string GetUserApplicationStatus(int userId) 
+        {
+            string query_stat = "SELECT AppStatus FROM user WHERE UserID = @userID";
+            object result = database.ExecuteScalar(query_stat, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@userID", userId);
+            });
+
+            return result?.ToString();
+        }
+
         private void informations_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -88,6 +115,11 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         {
             new AdmissionExam().Show();
             this.Hide();
+        }
+
+        private void applicationStatus_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
