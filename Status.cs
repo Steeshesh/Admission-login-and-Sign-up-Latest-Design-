@@ -26,8 +26,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             string reqStat = GetUserRequirementsStatus(UserSession.UserID);
             string user_studentID = GetUserID(UserSession.UserID);
             string programName = GetChosenProgram(UserSession.UserID);
+            string examStatus = GetExamStatus(UserSession.UserID);
+            string comment = GetComment(UserSession.UserID);
 
-            if (firstName == "")
+            if (string.IsNullOrEmpty(firstName))
             {
                 fullName.Text = "Welcome!";
             }
@@ -36,35 +38,52 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 fullName.Text = "Welcome, " + firstName;
             }
 
-            if (reqStat == "")
+            if (string.IsNullOrEmpty(reqStat))
             {
-                requirementStatus.Text = "No submission";
+                requirementStatus.Text = "No Record";
             }
-            else 
+            else
             {
                 requirementStatus.Text = reqStat;
             }
 
-            if (user_studentID == "")
+            if (string.IsNullOrEmpty(user_studentID))
             {
                 studentID.Text = "";
             }
-            else 
+            else
             {
                 studentID.Text = user_studentID;
             }
 
-            if (programName == "")
+            if (string.IsNullOrEmpty(programName))
             {
-                ChosenProgram.Text = "No Submission";
+                ChosenProgram.Text = "No Record";
             }
             else
             {
                 ChosenProgram.Text = programName;
             }
 
+            if (string.IsNullOrEmpty(examStatus))
+            {
+                examinationStatus.Text = "";
+            }
+            else
+            {
+                examinationStatus.Text = examStatus;
+            }
+
+            if (string.IsNullOrEmpty(comment))
+            {
+                documentationStat.Text = "";
+            }
+            else
+            {
+                documentationStat.Text = comment;
+            }
             // Set the visibility of the Take Exam button
-            TakeExamButton.Visible = reqStat == "Approved";
+            TakeExamButton.Visible = reqStat == "Approved" && string.IsNullOrEmpty(examStatus);
         }
 
         private void Instructionbtn_Click(object sender, EventArgs e)
@@ -75,14 +94,26 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
+            LogOutUser();
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LogOutUser();
         }
 
+        private void LogOutUser()
+        {
+            // Clear the current user's session data
+            UserSession.Clear();
+
+            // Redirect to the Login form
+            Login loginForm = new Login();
+            loginForm.Show();
+
+            // Close the current form
+            this.Close();
+        }
         private void informations_Paint(object sender, PaintEventArgs e)
         {
             informations.BackColor = Color.FromArgb(150, Color.Black);
@@ -118,9 +149,9 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             return result?.ToString(); // Return the FirstName if found
         }
 
-        private string GetUserRequirementsStatus(int userId) 
+        private string GetUserRequirementsStatus(int userId)
         {
-            string query_stat = "SELECT ReqStatus FROM user WHERE UserID = @userID";
+            string query_stat = "SELECT ReqStatus FROM status WHERE UserID = @userID";
             object result = database.ExecuteScalar(query_stat, cmd =>
             {
                 cmd.Parameters.AddWithValue("@userID", userId);
@@ -140,10 +171,32 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             return result?.ToString();
         }
 
-        private string GetChosenProgram(int userId) 
+        private string GetChosenProgram(int userId)
         {
             string query_program = "SELECT ProgramName FROM program WHERE UserID = @userID";
             object result = database.ExecuteScalar(query_program, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@userID", userId);
+            });
+
+            return result?.ToString();
+        }
+
+        private string GetExamStatus(int userId)
+        {
+            string query_examStat = "SELECT ExamStatus FROM status WHERE UserID = @userID";
+            object result = database.ExecuteScalar(query_examStat, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@userID", userId);
+            });
+
+            return result?.ToString();
+        }
+
+        private string GetComment(int userId)
+        {
+            string query_comment = "SELECT Comment FROM status WHERE UserID = @userID";
+            object result = database.ExecuteScalar(query_comment, cmd =>
             {
                 cmd.Parameters.AddWithValue("@userID", userId);
             });
@@ -167,6 +220,21 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         }
 
         private void studentID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void examinationStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void documentationStat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void documentationStatusLB_Click(object sender, EventArgs e)
         {
 
         }

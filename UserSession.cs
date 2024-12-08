@@ -11,6 +11,14 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         public static string Username { get; set; }
         public static int UserID { get; set; }
         public static string UserType { get; set; }
+
+        // Method to clear all session data
+        public static void Clear()
+        {
+            Username = null;
+            UserID = 0;
+            UserType = null;
+        }
     }
 
 }

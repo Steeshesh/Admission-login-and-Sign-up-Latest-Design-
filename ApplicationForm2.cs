@@ -31,14 +31,27 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             this.Hide();
         }
 
-        private void Logout_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
+            LogOutUser();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            LogOutUser();
+        }
+
+        private void LogOutUser()
+        {
+            // Clear the current user's session data
+            UserSession.Clear();
+
+            // Redirect to the Login form
+            Login loginForm = new Login();
+            loginForm.Show();
+
+            // Close the current form
+            this.Close();
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -77,6 +90,14 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                         cmd.Parameters.AddWithValue("@ProgramName", ProgramName.Text);
                     });
 
+                //Update status
+                bool statusUpdated = db.ExecuteQuery(
+                    "UPDATE status SET ReqStatus = 'Pending' WHERE UserID = @UserID",
+                    cmd =>
+                    {
+                        cmd.Parameters.AddWithValue("@UserID", UserSession.UserID);
+                    });
+
                 // Verify success and notify user
                 if (docReqUpdated && programUpdated)
                 {
@@ -101,7 +122,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         {
             //using (SolidBrush brush = new SolidBrush(Color.FromArgb(150, Color.Black)))
             {
-               // e.Graphics.FillRectangle(brush, informations.ClientRectangle);
+                // e.Graphics.FillRectangle(brush, informations.ClientRectangle);
             }
         }
 

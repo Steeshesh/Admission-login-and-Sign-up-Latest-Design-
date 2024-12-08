@@ -27,19 +27,25 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (this.InvokeRequired)  // Ensure UI update happens on the UI thread
-            {
-                this.Invoke(new Action(Application.Exit));
-            }
-            else
-            {
-                Application.Exit();
-            }
+            LogOutUser();
         }
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LogOutUser();
+        }
+
+        private void LogOutUser()
+        {
+            // Clear the current user's session data
+            UserSession.Clear();
+
+            // Redirect to the Login form
+            Login loginForm = new Login();
+            loginForm.Show();
+
+            // Close the current form
+            this.Close();
         }
 
         private void Applybtn_Click(object sender, EventArgs e)

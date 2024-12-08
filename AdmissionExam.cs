@@ -6,15 +6,14 @@ using System;
 namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class AdmissionExam : Form
-
     {
         private bool isTimerExpired = false;  // Flag to track if the timer expired
         private int timeLeft;
-
+        private Database database;
         public AdmissionExam()
         {
             InitializeComponent();
-
+            database = new Database();
             ExamTimer.Tick += ExamTimer_Tick;
         }
 
@@ -30,13 +29,27 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             this.Hide();
         }
 
-        private void Logout_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            LogOutUser();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            LogOutUser();
+        }
+
+        private void LogOutUser()
+        {
+            // Clear the current user's session data
+            UserSession.Clear();
+
+            // Redirect to the Login form
+            Login loginForm = new Login();
+            loginForm.Show();
+
+            // Close the current form
+            this.Close();
         }
 
         private void Applybtn_Click(object sender, EventArgs e)
@@ -84,8 +97,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             int Counter = 0;
 
             RadioButton[] radioButtons = { rbtnCorrect1, rbtnCorrect2, rbtnCorrect3, rbtnCorrect4, rbtnCorrect5, rbtnCorrect6,
-                       rbtnCorrect7, rbtnCorrect8, rbtnCorrect9, rbtnCorrect10, rbtnCorrect11,
-                       rbtnCorrect12, rbtnCorrect13, rbtnCorrect14, rbtnCorrect15 };
+                   rbtnCorrect7, rbtnCorrect8, rbtnCorrect9, rbtnCorrect10, rbtnCorrect11,
+                   rbtnCorrect12, rbtnCorrect13, rbtnCorrect14, rbtnCorrect15 };
 
             foreach (var rbtn in radioButtons)
             {
@@ -95,79 +108,51 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 }
             }
 
-            // Only validate unanswered questions if the timer hasn't expired
-            if (!isTimerExpired)
-            {
-                // Empty GroupBox Validation //
-                var radioPairs = new (RadioButton rbtn1, RadioButton rbtn2)[]
-                {
-                    (rbtnCorrect1, rbtn2),
-                    (rbtnCorrect2, radioButton4),
-                    (rbtnCorrect3, radioButton6),
-                    (rbtnCorrect4, radioButton8),
-                    (rbtnCorrect5, radioButton9),
-                    (rbtnCorrect6, radioButton12),
-                    (rbtnCorrect7, radioButton13),
-                    (rbtnCorrect8, radioButton15),
-                    (rbtnCorrect9, radioButton17),
-                    (rbtnCorrect10, radioButton25),
-                    (rbtnCorrect11, radioButton26),
-                    (rbtnCorrect12, radioButton27),
-                    (rbtnCorrect13, radioButton22),
-                    (rbtnCorrect14, radioButton29),
-                    (rbtnCorrect15, radioButton24)
-                };
-
-                bool allAnswered = true;
-                List<int> unansweredQuestions = new List<int>(); // List to track unanswered questions
-
-                // Check for unanswered questions in each group box
-                for (int i = 0; i < radioPairs.Length; i++)
-                {
-                    var pair = radioPairs[i];
-                    if (!pair.rbtn1.Checked && !pair.rbtn2.Checked)
-                    {
-                        unansweredQuestions.Add(i + 1); // Track the unanswered question index
-                        allAnswered = false; // Mark as unanswered
-                    }
-                }
-
-                // If there are unanswered questions, show validation messages
-                if (!allAnswered)
-                {
-                    // Display an error message for each unanswered question group
-                    foreach (var questionIndex in unansweredQuestions)
-                    {
-                        MessageBox.Show($"Question No. {questionIndex} is empty. Please select either True or False.",
-                                        "Submission Failed",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning);
-                    }
-                    // Optionally, resume the timer if it hasn’t expired yet and let the user continue answering.
-                    ExamTimer.Start(); // Start the timer again to allow the user to answer the questions
-                    return; // Stop further checks until user answers the skipped or no answer question/s
-                }
-            }
-
-            // After checking for unanswered questions, show score-based messages
+            // After checking for unanswered questions, determine the result
+            string examResult;
             if (Counter >= 8)
             {
-                // Show congratulations message if the user passed
+                examResult = "Passed";
                 MessageBox.Show("Congratulations! You passed the exam!", "Well Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("Please check your status for your requirements approval.", "Waiting for approval", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                new Status().Show();
-                this.Hide();
             }
-            else if (Counter <= 7)
+            else
             {
-                // Show the apology message if the user didn't pass
+                examResult = "Failed";
                 MessageBox.Show("We're sorry, you didn't pass the exam. Better luck next time!", "Try Again, next examination", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
-                new Status().Show();
-                this.Hide();
+            // Update the ExamStatus in the database
+            UpdateExamStatus(UserSession.UserID, examResult);
+
+            // Redirect to the Status page
+            new Status().Show();
+            this.Hide();
+        }
+
+        /// <summary>
+        /// Updates the ExamStatus in the database for the given UserID.
+        /// </summary>
+        /// <param name="userId">The ID of the user taking the exam.</param>
+        /// <param name="examResult">The result of the exam ("Passed" or "Failed").</param>
+        private void UpdateExamStatus(int userId, string examResult)
+        {
+            string query = "UPDATE status SET ExamStatus = @examResult WHERE UserID = @userId";
+
+            try
+            {
+                Database database = new Database();
+                database.ExecuteScalar(query, cmd =>
+                {
+                    cmd.Parameters.AddWithValue("@examResult", examResult);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating the exam status: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

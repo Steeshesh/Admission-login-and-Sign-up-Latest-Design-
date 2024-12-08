@@ -129,13 +129,15 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             string insertContactQuery = "INSERT INTO contact (UserID, PhoneNo, EmailAddress, HomeAddress, GuardiansNo) VALUES (@userId, NULL, NULL, NULL, NULL)";
             string insertDocReqsQuery = "INSERT INTO docreqs (UserID, FormalPicture, BirthCertificate, TranscriptOfRecords, GoodMorals) VALUES (@userId, NULL, NULL, NULL, NULL)";
             string insertProgramQuery = "INSERT INTO program (UserID, ProgramName) VALUES (@userId, NULL)";
+            string insertStatusQuery = "INSERT INTO status (UserID, ReqStatus, ExamStatus, Comment) VALUES (@userId, NULL, NULL, NULL)";
 
             bool academicInserted = database.ExecuteQuery(insertAcademicQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
             bool contactInserted = database.ExecuteQuery(insertContactQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
             bool docReqsInserted = database.ExecuteQuery(insertDocReqsQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
             bool programInserted = database.ExecuteQuery(insertProgramQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
+            bool statusInserted = database.ExecuteQuery(insertStatusQuery, cmd => cmd.Parameters.AddWithValue("@userId", userId));
 
-            if (!academicInserted || !contactInserted || !docReqsInserted || !programInserted)
+            if (!academicInserted || !contactInserted || !docReqsInserted || !programInserted || !statusInserted)
             {
                 MessageBox.Show("An error occurred while setting up additional data. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
