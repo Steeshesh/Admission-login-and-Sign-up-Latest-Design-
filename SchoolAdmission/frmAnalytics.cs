@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class frmAnalytics : Form
     {

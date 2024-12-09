@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class frmCommentDialog : Form
     {

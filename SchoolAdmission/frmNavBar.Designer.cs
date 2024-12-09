@@ -1,5 +1,5 @@
 ﻿// Form1.Designer.cs
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     partial class frmNavBar
     {
@@ -178,7 +178,6 @@ namespace SchoolAdmission
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SchoolAdmission.Properties.Resources.umak_log_oreal;
             this.pictureBox2.Location = new System.Drawing.Point(49, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 80);

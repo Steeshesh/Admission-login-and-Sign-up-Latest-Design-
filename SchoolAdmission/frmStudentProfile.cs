@@ -4,7 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class frmStudentProfile : Form
     {

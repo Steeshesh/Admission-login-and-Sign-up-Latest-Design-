@@ -1,7 +1,7 @@
 ﻿// frmAnalytics.Designer.cs
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     partial class frmAnalytics
     {

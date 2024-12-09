@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SchoolAdmission.Properties
+namespace Admission_login_and_Sign_up__Latest_Design_.Properties
 {
 
 
