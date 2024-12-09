@@ -8,7 +8,8 @@ namespace SchoolAdmission
 {
     public class DatabaseConnection
     {
-        private static string connectionString = "Server=localhost;Database=admission_system;Uid=root;Pwd=;";
+        // Update connection string to use the new database name
+        private static string connectionString = "Server=localhost;Database=dummy_db;Uid=root;Pwd=;";
         private static MySqlConnection connection = null;
 
         public static MySqlConnection GetConnection()
@@ -18,6 +19,25 @@ namespace SchoolAdmission
                 connection = new MySqlConnection(connectionString);
             }
             return connection;
+        }
+
+        // Add method to test connection
+        public static bool TestConnection()
+        {
+            try
+            {
+                using (var conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Connection test failed: {ex.Message}", "Connection Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         public static bool OpenConnection()
@@ -40,13 +60,16 @@ namespace SchoolAdmission
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server. Contact administrator");
+                        MessageBox.Show("Cannot connect to server. Contact administrator", "Connection Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        MessageBox.Show("Invalid username/password, please try again", "Authentication Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     default:
-                        MessageBox.Show($"Error: {ex.Message}");
+                        MessageBox.Show($"Error: {ex.Message}", "Database Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                 }
                 return false;
@@ -65,12 +88,13 @@ namespace SchoolAdmission
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error closing connection: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        public static DataTable ExecuteQuery(string query)
+        public static DataTable ExecuteQuery(string query, Dictionary<string, object> parameters = null)
         {
             DataTable dataTable = new DataTable();
             try
@@ -78,15 +102,26 @@ namespace SchoolAdmission
                 if (OpenConnection())
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {
-                        adapter.Fill(dataTable);
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                            }
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dataTable);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error executing query: {ex.Message}");
+                MessageBox.Show($"Error executing query: {ex.Message}", "Query Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -95,7 +130,7 @@ namespace SchoolAdmission
             return dataTable;
         }
 
-        public static bool ExecuteNonQuery(string query)
+        public static bool ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
         {
             try
             {
@@ -103,14 +138,22 @@ namespace SchoolAdmission
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
+                        if (parameters != null)
+                        {
+                            foreach (var param in parameters)
+                            {
+                                cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                            }
+                        }
                         cmd.ExecuteNonQuery();
+                        return true;
                     }
-                    return true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error executing command: {ex.Message}");
+                MessageBox.Show($"Error executing command: {ex.Message}", "Command Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -118,33 +161,26 @@ namespace SchoolAdmission
             }
             return false;
         }
-        public static bool ExecuteNonQuery(string query, Dictionary<string, object> parameters)
+
+        // Helper method to get the last inserted ID
+        public static long GetLastInsertedId()
         {
             try
             {
-                if (OpenConnection())
+                if (connection.State == ConnectionState.Open)
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT LAST_INSERT_ID()", connection))
                     {
-                        // Add parameters to the command
-                        foreach (var param in parameters)
-                        {
-                            cmd.Parameters.AddWithValue(param.Key, param.Value);
-                        }
-                        cmd.ExecuteNonQuery();
+                        return Convert.ToInt64(cmd.ExecuteScalar());
                     }
-                    return true;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error executing command: {ex.Message}");
+                MessageBox.Show($"Error getting last inserted ID: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                CloseConnection();
-            }
-            return false;
+            return -1;
         }
     }
 }

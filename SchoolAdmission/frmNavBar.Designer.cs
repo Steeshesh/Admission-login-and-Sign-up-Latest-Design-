@@ -1,7 +1,7 @@
 ﻿// Form1.Designer.cs
 namespace SchoolAdmission
 {
-    partial class Form1
+    partial class frmNavBar
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -91,6 +91,7 @@ namespace SchoolAdmission
             this.button4.Text = "Logout";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // btnAnalytics
             // 
@@ -173,6 +174,7 @@ namespace SchoolAdmission
             this.pnlFormLoader.Name = "pnlFormLoader";
             this.pnlFormLoader.Size = new System.Drawing.Size(764, 477);
             this.pnlFormLoader.TabIndex = 2;
+            this.pnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFormLoader_Paint);
             // 
             // pictureBox2
             // 

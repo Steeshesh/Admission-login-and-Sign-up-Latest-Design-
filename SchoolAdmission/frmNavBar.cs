@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace SchoolAdmission
 {
-    public partial class Form1 : Form
+    public partial class frmNavBar : Form
     {
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
@@ -35,7 +35,7 @@ namespace SchoolAdmission
         private bool isDragging = false;
         private Timer opacityTimer;
 
-        public Form1()
+        public frmNavBar()
         {
             InitializeComponent();
             this.Load += Form1_Load;
@@ -369,6 +369,16 @@ namespace SchoolAdmission
         DatabaseConnection dbConnect = new DatabaseConnection();
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SchoolAdmission
@@ -15,21 +16,97 @@ namespace SchoolAdmission
 
         private void SetupDataGridView()
         {
+            // Basic DataGridView styling
+            dataGridViewStudents.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dataGridViewStudents.BorderStyle = BorderStyle.None;
+            dataGridViewStudents.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewStudents.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewStudents.EnableHeadersVisualStyles = false;
+            dataGridViewStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // Column Header Styling
+            dataGridViewStudents.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 30, 54);
+            dataGridViewStudents.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewStudents.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            dataGridViewStudents.ColumnHeadersDefaultCellStyle.Padding = new Padding(10);
+            dataGridViewStudents.ColumnHeadersHeight = 40;
+
+            // Cell Styling
+            dataGridViewStudents.DefaultCellStyle.BackColor = Color.FromArgb(35, 40, 62);
+            dataGridViewStudents.DefaultCellStyle.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewStudents.DefaultCellStyle.Font = new Font("Segoe UI", 9.5F, FontStyle.Regular);
+            dataGridViewStudents.DefaultCellStyle.Padding = new Padding(5);
+            dataGridViewStudents.RowTemplate.Height = 35;
+
+            // Selection Styling
+            dataGridViewStudents.DefaultCellStyle.SelectionBackColor = Color.FromArgb(64, 134, 246);
+            dataGridViewStudents.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Grid Colors
+            dataGridViewStudents.GridColor = Color.FromArgb(24, 30, 54);
+
             // Add columns to the DataGridView
-            dataGridViewStudents.Columns.Add("StudentID", "Student ID");
+            dataGridViewStudents.Columns.Add("UserID", "User ID");
             dataGridViewStudents.Columns.Add("Name", "Name");
             dataGridViewStudents.Columns.Add("Status", "Status");
+            dataGridViewStudents.Columns.Add("Comment", "Rejection Reason");
 
-            // Add a button column for approval
-            DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
-            btnColumn.HeaderText = "Action";
-            btnColumn.Text = "Approve";
-            btnColumn.Name = "btnApprove";
-            btnColumn.UseColumnTextForButtonValue = true;
-            dataGridViewStudents.Columns.Add(btnColumn);
+            // Add a button column for viewing details
+            DataGridViewButtonColumn btnViewInfo = new DataGridViewButtonColumn();
+            btnViewInfo.HeaderText = "Details";
+            btnViewInfo.Text = "View";
+            btnViewInfo.Name = "btnViewInfo";
+            btnViewInfo.UseColumnTextForButtonValue = true;
+            btnViewInfo.FlatStyle = FlatStyle.Flat;
+            btnViewInfo.DefaultCellStyle.BackColor = Color.FromArgb(64, 134, 246);
+            btnViewInfo.DefaultCellStyle.ForeColor = Color.White;
+            btnViewInfo.DefaultCellStyle.SelectionBackColor = Color.FromArgb(72, 149, 255);
+            btnViewInfo.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridViewStudents.Columns.Add(btnViewInfo);
 
-            // Handle cell click event
+            // Set column widths
+            dataGridViewStudents.Columns["UserID"].Width = 80;
+            dataGridViewStudents.Columns["Name"].Width = 200;
+            dataGridViewStudents.Columns["Status"].Width = 100;
+            dataGridViewStudents.Columns["Comment"].Width = 250;
+            dataGridViewStudents.Columns["btnViewInfo"].Width = 80;
+
+            // Custom status cell coloring
+            dataGridViewStudents.CellFormatting += (sender, e) =>
+            {
+                if (e.ColumnIndex == dataGridViewStudents.Columns["Status"].Index && e.Value != null)
+                {
+                    switch (e.Value.ToString().ToLower())
+                    {
+                        case "approved":
+                            e.CellStyle.ForeColor = Color.FromArgb(75, 181, 67);
+                            break;
+                        case "rejected":
+                            e.CellStyle.ForeColor = Color.FromArgb(230, 88, 88);
+                            break;
+                        case "pending":
+                            e.CellStyle.ForeColor = Color.FromArgb(255, 198, 51);
+                            break;
+                    }
+                }
+            };
+
+            // Remove focus rectangle
+            dataGridViewStudents.RowHeadersVisible = false;
             dataGridViewStudents.CellClick += DataGridViewStudents_CellClick;
+
+            // Additional customization
+            foreach (DataGridViewColumn column in dataGridViewStudents.Columns)
+            {
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                if (column.Name != "btnViewInfo")
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
+
+            // Alternating row colors
+            dataGridViewStudents.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(40, 45, 67);
         }
 
         private void frmStudentProfile_Load(object sender, EventArgs e)
@@ -42,12 +119,15 @@ namespace SchoolAdmission
             try
             {
                 string query = @"
-                    SELECT s.StudentID, 
-                           CONCAT(s.FirstName, ' ', s.LastName) as Name,
-                           a.Status
-                    FROM students s
-                    LEFT JOIN applications a ON s.StudentID = a.StudentID
-                    ORDER BY s.StudentID";
+            SELECT 
+                u.UserID, 
+                CONCAT(COALESCE(u.FirstName, ''), ' ', COALESCE(u.LastName, '')) as Name,
+                s.ReqStatus as Status,
+                s.Comment
+            FROM user u
+            LEFT JOIN status s ON u.UserID = s.UserID
+            WHERE u.FirstName IS NOT NULL
+            ORDER BY u.UserID";
 
                 DataTable dt = DatabaseConnection.ExecuteQuery(query);
                 dataGridViewStudents.Rows.Clear();
@@ -55,9 +135,10 @@ namespace SchoolAdmission
                 foreach (DataRow row in dt.Rows)
                 {
                     dataGridViewStudents.Rows.Add(
-                        row["StudentID"],
+                        row["UserID"],
                         row["Name"],
-                        row["Status"] ?? "Pending"
+                        row["Status"] ?? "Pending",
+                        row["Status"]?.ToString() == "Rejected" ? row["Comment"] : ""
                     );
                 }
             }
@@ -69,36 +150,18 @@ namespace SchoolAdmission
 
         private void DataGridViewStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the clicked cell is in the button column
-            if (e.ColumnIndex == dataGridViewStudents.Columns["btnApprove"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridViewStudents.Columns["btnViewInfo"].Index && e.RowIndex >= 0)
             {
-                int studentId = Convert.ToInt32(dataGridViewStudents.Rows[e.RowIndex].Cells["StudentID"].Value);
-                string currentStatus = dataGridViewStudents.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                int userId = Convert.ToInt32(dataGridViewStudents.Rows[e.RowIndex].Cells["UserID"].Value);
 
-                if (currentStatus.ToLower() != "approved")
+                // Open the detailed view form
+                using (var detailForm = new frmStudentDetail(userId))
                 {
-                    try
+                    if (detailForm.ShowDialog() == DialogResult.OK)
                     {
-                        string updateQuery = @"
-                            UPDATE applications 
-                            SET Status = 'Approved' 
-                            WHERE StudentID = @StudentID";
-
-                        DatabaseConnection.ExecuteNonQuery(updateQuery,
-                            new Dictionary<string, object> { { "@StudentID", studentId } });
-
-                        // Refresh the data
+                        // Refresh the data after the detail form is closed
                         LoadStudentData();
-                        MessageBox.Show("Application approved successfully!");
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error updating application status: " + ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Application is already approved.");
                 }
             }
         }

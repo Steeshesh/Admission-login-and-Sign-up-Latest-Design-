@@ -18,7 +18,7 @@ namespace SchoolAdmission
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmNavBar());
         }
 
         // Import the SetProcessDPIAware function from user32.dll

@@ -119,11 +119,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="databaseConnection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmNavBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmNavBar.Designer.cs">
+      <DependentUpon>frmNavBar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAnalytics.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,23 @@
     <Compile Include="frmAnalytics.Designer.cs">
       <DependentUpon>frmAnalytics.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCommentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCommentDialog.Designer.cs">
+      <DependentUpon>frmCommentDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentDetail.Designer.cs">
+      <DependentUpon>frmStudentDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStudentProfile.cs">
       <SubType>Form</SubType>
@@ -148,11 +160,17 @@
     <EmbeddedResource Include="frmAnalytics.resx">
       <DependentUpon>frmAnalytics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCommentDialog.resx">
+      <DependentUpon>frmCommentDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmNavBar.resx">
+      <DependentUpon>frmNavBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentDetail.resx">
+      <DependentUpon>frmStudentDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentProfile.resx">
       <DependentUpon>frmStudentProfile.cs</DependentUpon>

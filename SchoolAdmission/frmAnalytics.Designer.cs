@@ -123,7 +123,6 @@ namespace SchoolAdmission
             this.labelGenderDistribution.Size = new System.Drawing.Size(234, 31);
             this.labelGenderDistribution.TabIndex = 0;
             this.labelGenderDistribution.Text = "Gender Distribution:";
-            this.labelGenderDistribution.Click += new System.EventHandler(this.labelGenderDistribution_Click);
             // 
             // labelAverageAge
             // 
