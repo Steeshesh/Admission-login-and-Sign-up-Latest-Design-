@@ -274,5 +274,11 @@
   <ItemGroup>
     <None Include="Resources\ADMISSION SYSTEM %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolAdmission\SchoolAdmission\SchoolAdmission.csproj">
+      <Project>{7f249336-74eb-4e33-bf9b-54e5c804ab1d}</Project>
+      <Name>SchoolAdmission</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

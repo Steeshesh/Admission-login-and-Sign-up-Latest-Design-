@@ -6,7 +6,7 @@ using System.Runtime.InteropServices; // Include this for DllImport
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SchoolAdmission
+namespace Admission_login_and_Sign_up__Latest_Design_
 {
     internal static class Program
     {

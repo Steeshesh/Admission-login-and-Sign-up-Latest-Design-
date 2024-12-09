@@ -46,10 +46,20 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
             else if (loginResult.userType == "Admin")
             {
-                MessageBox.Show("Welcome Admin. Returning to Login page for now.");
+                // Set admin session info
+                UserSession.Username = loginResult.username;
+                UserSession.UserType = loginResult.userType;
+
+                MessageBox.Show("Welcome Admin!");
+
+                // Show the admin form
+                frmNavBar navBar = new frmNavBar();
+                navBar.Show();
+                this.Hide();
+
+                // Clear the login form fields
                 txtUsername.Clear();
                 PasswordInput.Clear();
-                PasswordInput.Focus();
             }
             else
             {
@@ -60,9 +70,16 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
         }
 
+        // Keep only this version of Login1
+        // Remove the duplicate method and keep only this one
         private (string userType, int? userID, string username) Login1(string username, string password)
         {
-            string query = "SELECT UserType, UserID FROM account WHERE Username = @username AND Password = @password";
+            string query = @"
+        SELECT UserType, UserID 
+        FROM account 
+        WHERE Username = @username 
+        AND Password = @password";
+
             using (var conn = database.GetConnection())
             {
                 conn.Open();
@@ -75,9 +92,18 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                     {
                         if (reader.Read())
                         {
+                            string userType = reader["UserType"].ToString();
+                            int? userId = null;
+
+                            // Handle both Admin and Student UserIDs
+                            if (reader["UserID"] != DBNull.Value)
+                            {
+                                userId = Convert.ToInt32(reader["UserID"]);
+                            }
+
                             return (
-                                userType: reader["UserType"].ToString(),
-                                userID: Convert.ToInt32(reader["UserID"]),
+                                userType: userType,
+                                userID: userId,
                                 username: username
                             );
                         }
@@ -86,6 +112,8 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             }
             return (null, null, null);
         }
+
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
