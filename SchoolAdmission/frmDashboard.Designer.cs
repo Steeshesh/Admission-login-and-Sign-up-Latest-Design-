@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,19 +42,33 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblPending = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.statusChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(62, 179);
+            this.panel6.Location = new System.Drawing.Point(38, 12);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(608, 279);
+            this.panel6.Size = new System.Drawing.Size(646, 85);
             this.panel6.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(34, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Welcome Admin";
             // 
             // label10
             // 
@@ -68,7 +86,7 @@
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.lblApproved);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(402, 18);
+            this.panel5.Location = new System.Drawing.Point(58, 304);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(268, 130);
             this.panel5.TabIndex = 5;
@@ -112,7 +130,7 @@
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.lblPending);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(62, 18);
+            this.panel4.Location = new System.Drawing.Point(58, 132);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(268, 130);
             this.panel4.TabIndex = 4;
@@ -150,12 +168,32 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "For Approval";
             // 
+            // statusChart
+            // 
+            this.statusChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.statusChart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            chartArea1.Name = "ChartArea1";
+            this.statusChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.statusChart.Legends.Add(legend1);
+            this.statusChart.Location = new System.Drawing.Point(384, 132);
+            this.statusChart.Name = "statusChart";
+            this.statusChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.statusChart.Series.Add(series1);
+            this.statusChart.Size = new System.Drawing.Size(300, 300);
+            this.statusChart.TabIndex = 7;
+            this.statusChart.Text = "chart1";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
+            this.Controls.Add(this.statusChart);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -169,6 +207,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statusChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,5 +224,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblPending;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart statusChart;
     }
 }
