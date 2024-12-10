@@ -85,5 +85,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             // Close the application when the new form is closed
             AboutPage.FormClosed += (s, args) => this.Close();
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

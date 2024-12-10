@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,9 +70,41 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 });
             });
         }
+        private void LoadImageToPictureBox(string imagePath)
+        {
+            try
+            {
+                // Dispose of the current image if it exists
+                if (studentPic.Image != null)
+                {
+                    var currentImage = studentPic.Image;
+                    studentPic.Image = null;
+                    currentImage.Dispose();
+                }
+
+                if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+                {
+                    using (var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                    {
+                        studentPic.Image = Image.FromStream(stream);
+                        studentPic.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                }
+                else
+                {
+                    // Load a default image if no image is found
+                    studentPic.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void UpdateUI(string firstName, string reqStat, string user_studentID,
-                            string programName, string examStatus, string comment)
+                    string programName, string examStatus, string comment)
         {
             fullName.Text = string.IsNullOrEmpty(firstName) ? "Welcome!" : "Welcome, " + firstName;
             requirementStatus.Text = string.IsNullOrEmpty(reqStat) ? "No Record" : reqStat;
@@ -81,6 +114,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             documentationStat.Text = string.IsNullOrEmpty(comment) ? "" : comment;
 
             TakeExamButton.Visible = reqStat == "Approved" && string.IsNullOrEmpty(examStatus);
+
+            // Load the formal picture
+            string imagePath = GetUserFormalPicture(UserSession.UserID);
+            LoadImageToPictureBox(imagePath);
         }
 
         private string GetUserFirstName(int userId)
@@ -200,6 +237,11 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 informations.BackColor = Color.FromArgb(150, Color.Black);
             }
         }
+        private string GetUserFormalPicture(int userId)
+        {
+            string query = "SELECT FormalPicture FROM docreqs WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
 
         // Empty event handlers can be removed if not needed
         private void applicationStatus_Click(object sender, EventArgs e) { }
@@ -210,5 +252,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private void documentationStat_Click(object sender, EventArgs e) { }
         private void documentationStatusLB_Click(object sender, EventArgs e) { }
         private void informations_Paint_1(object sender, PaintEventArgs e) { }
+
+        private void studentPic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

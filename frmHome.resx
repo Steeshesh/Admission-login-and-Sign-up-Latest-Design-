@@ -360,6 +360,14 @@
   <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Gabco Tech School is one of the leading global hubs for cutting-edge technology
+ education and innovation. It is a dynamic ecosystem focused on research,
+ learning, and tech entrepreneurship, where our school and faculty engage with
+ emerging startups, industry leaders, scholars, and global experts in the tech space.
+
+</value>
+  </data>
   <data name="guna2PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAjkAAAF7CAMAAAAHTWqlAAAABGdBTUEAALGPC/xhBQAAAwBQTFRFAQIC
@@ -2776,14 +2784,6 @@
   <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>412, 17</value>
   </metadata>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Gabco Tech School is one of the leading global hubs for cutting-edge technology
- education and innovation. It is a dynamic ecosystem focused on research,
- learning, and tech entrepreneurship, where our school and faculty engage with
- emerging startups, industry leaders, scholars, and global experts in the tech space.
-
-</value>
-  </data>
   <metadata name="guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>628, 17</value>
   </metadata>

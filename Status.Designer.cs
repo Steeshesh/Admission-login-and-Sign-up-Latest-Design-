@@ -48,7 +48,7 @@
             this.ChosenProgram = new System.Windows.Forms.Label();
             this.studentIDLB = new System.Windows.Forms.Label();
             this.studentID = new System.Windows.Forms.Label();
-            this.studentPic = new System.Windows.Forms.PictureBox();
+            this.studentPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Logout)).BeginInit();
             this.informations.SuspendLayout();
             this.SimpleInfos.SuspendLayout();
@@ -130,11 +130,11 @@
             // informations
             // 
             this.informations.BackColor = System.Drawing.Color.Transparent;
+            this.informations.Controls.Add(this.studentPic);
             this.informations.Controls.Add(this.TakeExamButton);
             this.informations.Controls.Add(this.fullName);
             this.informations.Controls.Add(this.panel1);
             this.informations.Controls.Add(this.SimpleInfos);
-            this.informations.Controls.Add(this.studentPic);
             this.informations.Location = new System.Drawing.Point(299, 21);
             this.informations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.informations.Name = "informations";
@@ -244,7 +244,7 @@
             this.documentationStatusLB.Name = "documentationStatusLB";
             this.documentationStatusLB.Size = new System.Drawing.Size(365, 71);
             this.documentationStatusLB.TabIndex = 2;
-            this.documentationStatusLB.Text = "Documentation Status:";
+            this.documentationStatusLB.Text = "Admin Feedback";
             this.documentationStatusLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // documentationStat
@@ -320,7 +320,7 @@
             this.studentIDLB.Name = "studentIDLB";
             this.studentIDLB.Size = new System.Drawing.Size(365, 65);
             this.studentIDLB.TabIndex = 8;
-            this.studentIDLB.Text = "StudentID:";
+            this.studentIDLB.Text = "Student ID";
             this.studentIDLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // studentID
@@ -338,14 +338,12 @@
             // 
             // studentPic
             // 
-            this.studentPic.BackColor = System.Drawing.Color.Transparent;
-            this.studentPic.BackgroundImage = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.profile_png;
-            this.studentPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.studentPic.Location = new System.Drawing.Point(42, 33);
-            this.studentPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.studentPic.ImageRotate = 0F;
+            this.studentPic.Location = new System.Drawing.Point(60, 15);
             this.studentPic.Name = "studentPic";
-            this.studentPic.Size = new System.Drawing.Size(249, 126);
-            this.studentPic.TabIndex = 3;
+            this.studentPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.studentPic.Size = new System.Drawing.Size(157, 137);
+            this.studentPic.TabIndex = 9;
             this.studentPic.TabStop = false;
             // 
             // Status
@@ -387,7 +385,6 @@
         private System.Windows.Forms.Button Statusbtn;
         private System.Windows.Forms.Panel informations;
         private System.Windows.Forms.TableLayoutPanel SimpleInfos;
-        private System.Windows.Forms.PictureBox studentPic;
         private System.Windows.Forms.Label fullName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label requirementsStatusLB;
@@ -401,5 +398,6 @@
         private System.Windows.Forms.Label studentIDLB;
         private System.Windows.Forms.Label studentID;
         private System.Windows.Forms.Button TakeExamButton;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox studentPic;
     }
 }
