@@ -34,83 +34,89 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         {
             try
             {
-                // Use a relative path from the application's startup directory
+                // Path to the directory containing course pictures
                 string basePath = Path.Combine(Application.StartupPath, "CoursesPics");
 
-                // Ensure the directory exists
+                // Check if the directory exists
                 if (!Directory.Exists(basePath))
                 {
                     MessageBox.Show($"Course pictures directory not found: {basePath}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                string[] imagePaths = Directory.GetFiles(basePath, "*.png")
-                    .OrderBy(f => f) // Optional: sort files to ensure consistent order
-                    .ToArray();
+                // Mapping program names to their corresponding image file names
+                var programToImageMap = new Dictionary<string, string>
+        {
+            { "School of Law", "School-of-Law-SOL-1030x1030.png" },
+            { "Institute of Art and Design", "IAD-LOGO-PNG-300x300.png" },
+            { "Institute of Nursing", "ION-color-logo-300x300.png" },
+            { "Institute of Pharmacy", "IOP-logo-300x300.png" },
+            { "Institute of Accounting", "IOA-LOGO-300x300.png" },
+            { "College of Business and Finance", "cbfs-logo-300x300.png" },
+            { "College of Computing and Information Sciences", "CCIS-Logo-Official-1-1-300x300.png" }
+        };
 
                 images.Clear();
 
-                foreach (var path in imagePaths)
+                foreach (var entry in programToImageMap)
                 {
-                    if (File.Exists(path))
+                    string imagePath = Path.Combine(basePath, entry.Value);
+
+                    if (File.Exists(imagePath))
                     {
                         try
                         {
-                            using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                            using (var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
                             {
                                 images.Add(Image.FromStream(stream));
                             }
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Error loading image {path}: {ex.Message}");
+                            MessageBox.Show($"Error loading image {imagePath}: {ex.Message}");
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Image not found for {entry.Key}: {imagePath}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
 
+                // Add program rates, names, descriptions, and quotes in the same order
                 programRates.AddRange(new[]
                 {
-                (92.5, 87.3, 89.1, 45.0),
-                (88.7, 91.2, 93.5, 65.0),
-                (95.8, 89.7, 91.2, 70.0),
-                (94.2, 88.5, 90.8, 55.0),
-                (91.5, 86.9, 88.4, 60.0),
-                (93.1, 88.2, 89.7, 58.0),
-                (96.3, 90.5, 92.1, 52.0)
-            });
+            (92.5, 87.3, 89.1, 45.0),
+            (88.7, 91.2, 93.5, 65.0),
+            (95.8, 89.7, 91.2, 70.0),
+            (94.2, 88.5, 90.8, 55.0),
+            (91.5, 86.9, 88.4, 60.0),
+            (93.1, 88.2, 89.7, 58.0),
+            (96.3, 90.5, 92.1, 52.0)
+        });
 
-                programNames.AddRange(new[]
-                {
-                "School of Law",
-                "Institute of Art and Design",
-                "Institute of Nursing",
-                "Institute of Pharmacy",
-                "Institute of Accounting",
-                "College of Business and Finance",
-                "College of Computing and Information Sciences"
-            });
+                programNames.AddRange(programToImageMap.Keys);
 
                 programDescriptions.AddRange(new[]
                 {
-                "• Champion justice and legal excellence\n• Master constitutional and civil rights law\n• Develop expertise in criminal and corporate law\n• Shape policy and advocate for change\n• Lead the future of legal practice",
-                "• Express creativity through innovative design\n• Master digital and traditional art forms\n• Create compelling visual narratives\n• Learn industry-standard design tools\n• Shape the future of visual communication",
-                "• Provide compassionate patient care\n• Master advanced clinical skills\n• Lead healthcare innovation\n• Develop specialized nursing expertise\n• Transform lives through quality care",
-                "• Advance pharmaceutical research\n• Develop life-saving medications\n• Master drug development processes\n• Lead healthcare innovation\n• Improve patient outcomes",
-                "• Master financial analysis and reporting\n• Lead audit and compliance initiatives\n• Develop strategic business insights\n• Navigate complex financial systems\n• Shape future financial practices",
-                "• Drive business innovation and growth\n• Master global financial markets\n• Develop strategic leadership skills\n• Lead organizational transformation\n• Shape the future of commerce",
-                "• Innovate through code and technology\n• Master cutting-edge development tools\n• Lead digital transformation\n• Develop AI and machine learning solutions\n• Shape the future of technology"
-            });
+            "• Champion justice and legal excellence\n• Master constitutional and civil rights law\n• Develop expertise in criminal and corporate law\n• Shape policy and advocate for change\n• Lead the future of legal practice",
+            "• Express creativity through innovative design\n• Master digital and traditional art forms\n• Create compelling visual narratives\n• Learn industry-standard design tools\n• Shape the future of visual communication",
+            "• Provide compassionate patient care\n• Master advanced clinical skills\n• Lead healthcare innovation\n• Develop specialized nursing expertise\n• Transform lives through quality care",
+            "• Advance pharmaceutical research\n• Develop life-saving medications\n• Master drug development processes\n• Lead healthcare innovation\n• Improve patient outcomes",
+            "• Master financial analysis and reporting\n• Lead audit and compliance initiatives\n• Develop strategic business insights\n• Navigate complex financial systems\n• Shape future financial practices",
+            "• Drive business innovation and growth\n• Master global financial markets\n• Develop strategic leadership skills\n• Lead organizational transformation\n• Shape the future of commerce",
+            "• Innovate through code and technology\n• Master cutting-edge development tools\n• Lead digital transformation\n• Develop AI and machine learning solutions\n• Shape the future of technology"
+        });
 
                 quotes.AddRange(new[]
                 {
-                "Justice is the foundation of peace.",
-                "Creativity takes courage.",
-                "Caring is the essence of nursing.",
-                "Pharmacy is the science of wellness.",
-                "Accounting is the language of business.",
-                "Business is the catalyst of progress.",
-                "Innovation starts with code."
-            });
+            "Justice is the foundation of peace.",
+            "Creativity takes courage.",
+            "Caring is the essence of nursing.",
+            "Pharmacy is the science of wellness.",
+            "Accounting is the language of business.",
+            "Business is the catalyst of progress.",
+            "Innovation starts with code."
+        });
 
                 if (images.Count > 0)
                 {
@@ -122,6 +128,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
                 MessageBox.Show($"Error loading content: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void UpdateDisplay(int index)
         {

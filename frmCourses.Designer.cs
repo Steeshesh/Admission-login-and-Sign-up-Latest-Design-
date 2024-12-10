@@ -211,7 +211,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             // 
             this.guna2PictureBox_ccis.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox_ccis.ImageRotate = 0F;
-            this.guna2PictureBox_ccis.Location = new System.Drawing.Point(410, 88);
+            this.guna2PictureBox_ccis.Location = new System.Drawing.Point(435, 99);
             this.guna2PictureBox_ccis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox_ccis.Name = "guna2PictureBox_ccis";
             this.guna2PictureBox_ccis.Size = new System.Drawing.Size(300, 249);
@@ -515,7 +515,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             this.quotesText.BackColor = System.Drawing.Color.Transparent;
             this.quotesText.Font = new System.Drawing.Font("Dosis SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quotesText.ForeColor = System.Drawing.Color.White;
-            this.quotesText.Location = new System.Drawing.Point(370, 350);
+            this.quotesText.Location = new System.Drawing.Point(391, 360);
             this.quotesText.Name = "quotesText";
             this.quotesText.Size = new System.Drawing.Size(171, 38);
             this.quotesText.TabIndex = 27;
