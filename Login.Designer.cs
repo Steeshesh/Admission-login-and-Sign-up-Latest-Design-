@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,6 +41,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordInput = new System.Windows.Forms.TextBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,6 +191,12 @@
             this.PasswordInput.TabIndex = 12;
             this.PasswordInput.TextChanged += new System.EventHandler(this.PasswordInput_TextChanged);
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.pictureBox1;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,6 +238,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.TextBox PasswordInput;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }
 

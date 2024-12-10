@@ -6,6 +6,7 @@ using System.Runtime.InteropServices; // Include this for DllImport
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Admission_login_and_Sign_up__Latest_Design_
 {
     internal static class Program
@@ -19,7 +20,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new frmHome());
         }
 
         // Import the SetProcessDPIAware function from user32.dll

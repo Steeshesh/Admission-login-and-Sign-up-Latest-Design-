@@ -12,84 +12,136 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 {
     public partial class Status : Form
     {
-        private Database database;
+        private readonly Database database;
+        private bool isClosing = false;
 
         public Status()
         {
+            // Enable double buffering
+            this.SetStyle(ControlStyles.DoubleBuffer |
+                         ControlStyles.UserPaint |
+                         ControlStyles.AllPaintingInWmPaint,
+                         true);
+            this.UpdateStyles();
+
             InitializeComponent();
             database = new Database();
         }
 
-        private void Status_Load(object sender, EventArgs e)
+        protected override CreateParams CreateParams
         {
-            string firstName = GetUserFirstName(UserSession.UserID);
-            string reqStat = GetUserRequirementsStatus(UserSession.UserID);
-            string user_studentID = GetUserID(UserSession.UserID);
-            string programName = GetChosenProgram(UserSession.UserID);
-            string examStatus = GetExamStatus(UserSession.UserID);
-            string comment = GetComment(UserSession.UserID);
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
 
-            if (string.IsNullOrEmpty(firstName))
+        private async void Status_Load(object sender, EventArgs e)
+        {
+            try
             {
-                fullName.Text = "Welcome!";
+                await LoadUserDataAsync();
             }
-            else
+            catch (Exception ex)
             {
-                fullName.Text = "Welcome, " + firstName;
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
-            if (string.IsNullOrEmpty(reqStat))
+        private async Task LoadUserDataAsync()
+        {
+            await Task.Run(() =>
             {
-                requirementStatus.Text = "No Record";
-            }
-            else
-            {
-                requirementStatus.Text = reqStat;
-            }
+                var firstName = GetUserFirstName(UserSession.UserID);
+                var reqStat = GetUserRequirementsStatus(UserSession.UserID);
+                var user_studentID = GetUserID(UserSession.UserID);
+                var programName = GetChosenProgram(UserSession.UserID);
+                var examStatus = GetExamStatus(UserSession.UserID);
+                var comment = GetComment(UserSession.UserID);
 
-            if (string.IsNullOrEmpty(user_studentID))
-            {
-                studentID.Text = "";
-            }
-            else
-            {
-                studentID.Text = user_studentID;
-            }
+                // Update UI on the main thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    UpdateUI(firstName, reqStat, user_studentID, programName, examStatus, comment);
+                });
+            });
+        }
 
-            if (string.IsNullOrEmpty(programName))
-            {
-                ChosenProgram.Text = "No Record";
-            }
-            else
-            {
-                ChosenProgram.Text = programName;
-            }
+        private void UpdateUI(string firstName, string reqStat, string user_studentID,
+                            string programName, string examStatus, string comment)
+        {
+            fullName.Text = string.IsNullOrEmpty(firstName) ? "Welcome!" : "Welcome, " + firstName;
+            requirementStatus.Text = string.IsNullOrEmpty(reqStat) ? "No Record" : reqStat;
+            studentID.Text = string.IsNullOrEmpty(user_studentID) ? "" : user_studentID;
+            ChosenProgram.Text = string.IsNullOrEmpty(programName) ? "No Record" : programName;
+            examinationStatus.Text = string.IsNullOrEmpty(examStatus) ? "" : examStatus;
+            documentationStat.Text = string.IsNullOrEmpty(comment) ? "" : comment;
 
-            if (string.IsNullOrEmpty(examStatus))
-            {
-                examinationStatus.Text = "";
-            }
-            else
-            {
-                examinationStatus.Text = examStatus;
-            }
-
-            if (string.IsNullOrEmpty(comment))
-            {
-                documentationStat.Text = "";
-            }
-            else
-            {
-                documentationStat.Text = comment;
-            }
-            // Set the visibility of the Take Exam button
             TakeExamButton.Visible = reqStat == "Approved" && string.IsNullOrEmpty(examStatus);
+        }
+
+        private string GetUserFirstName(int userId)
+        {
+            string query = "SELECT FirstName FROM user WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string GetUserRequirementsStatus(int userId)
+        {
+            string query = "SELECT ReqStatus FROM status WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string GetUserID(int userId)
+        {
+            string query = "SELECT UserID FROM user WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string GetChosenProgram(int userId)
+        {
+            string query = "SELECT ProgramName FROM program WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string GetExamStatus(int userId)
+        {
+            string query = "SELECT ExamStatus FROM status WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string GetComment(int userId)
+        {
+            string query = "SELECT Comment FROM status WHERE UserID = @userID";
+            return ExecuteScalarQuery(query, userId);
+        }
+
+        private string ExecuteScalarQuery(string query, int userId)
+        {
+            try
+            {
+                object result = database.ExecuteScalar(query, cmd =>
+                {
+                    cmd.Parameters.AddWithValue("@userID", userId);
+                });
+                return result?.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Database error: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
 
         private void Instructionbtn_Click(object sender, EventArgs e)
         {
-            new DefaultPage().Show();
-            this.Hide();
+            var defaultPage = new DefaultPage();
+            defaultPage.Show();
+            CloseForm();
         }
 
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -104,139 +156,59 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
         private void LogOutUser()
         {
-            // Clear the current user's session data
             UserSession.Clear();
-
-            // Redirect to the Login form
-            Login loginForm = new Login();
+            var loginForm = new Login();
             loginForm.Show();
-
-            // Close the current form
-            this.Close();
-        }
-        private void informations_Paint(object sender, PaintEventArgs e)
-        {
-            informations.BackColor = Color.FromArgb(150, Color.Black);
+            CloseForm();
         }
 
         private void Applybtn_Click(object sender, EventArgs e)
         {
-            new ApplicationForm().Show();
-            this.Hide();
-        }
-
-        private void applicationStatus_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fullName_Click(object sender, EventArgs e)
-        {
-            // Get the FirstName using UserID from the UserSession
-
-            // Assuming there's a label (e.g., lblFullName) to display the name
-        }
-
-        private string GetUserFirstName(int userId)
-        {
-            // Query the database to get the first name of the logged-in user
-            string query = "SELECT FirstName FROM user WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString(); // Return the FirstName if found
-        }
-
-        private string GetUserRequirementsStatus(int userId)
-        {
-            string query_stat = "SELECT ReqStatus FROM status WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query_stat, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString();
-        }
-
-        private string GetUserID(int userId)
-        {
-            string query_id = "SELECT UserID FROM user WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query_id, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString();
-        }
-
-        private string GetChosenProgram(int userId)
-        {
-            string query_program = "SELECT ProgramName FROM program WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query_program, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString();
-        }
-
-        private string GetExamStatus(int userId)
-        {
-            string query_examStat = "SELECT ExamStatus FROM status WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query_examStat, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString();
-        }
-
-        private string GetComment(int userId)
-        {
-            string query_comment = "SELECT Comment FROM status WHERE UserID = @userID";
-            object result = database.ExecuteScalar(query_comment, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@userID", userId);
-            });
-
-            return result?.ToString();
-        }
-        private void informations_Paint_1(object sender, PaintEventArgs e)
-        {
-
+            var applicationForm = new ApplicationForm();
+            applicationForm.Show();
+            CloseForm();
         }
 
         private void TakeExamButton_Click(object sender, EventArgs e)
         {
-            new AdmissionExam().Show();
+            var examForm = new AdmissionExam();
+            examForm.Show();
+            CloseForm();
+        }
+
+        private void CloseForm()
+        {
+            isClosing = true;
             this.Hide();
+            this.Close();
         }
 
-        private void applicationStatus_Click_1(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-
+            if (!isClosing && e.CloseReason == CloseReason.UserClosing)
+            {
+                // Handle application exit
+                Application.Exit();
+            }
+            base.OnFormClosing(e);
         }
 
-        private void studentID_Click(object sender, EventArgs e)
+        private void informations_Paint(object sender, PaintEventArgs e)
         {
-
+            if (informations != null)
+            {
+                informations.BackColor = Color.FromArgb(150, Color.Black);
+            }
         }
 
-        private void examinationStatus_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void documentationStat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void documentationStatusLB_Click(object sender, EventArgs e)
-        {
-
-        }
+        // Empty event handlers can be removed if not needed
+        private void applicationStatus_Click(object sender, EventArgs e) { }
+        private void fullName_Click(object sender, EventArgs e) { }
+        private void applicationStatus_Click_1(object sender, EventArgs e) { }
+        private void studentID_Click(object sender, EventArgs e) { }
+        private void examinationStatus_Click(object sender, EventArgs e) { }
+        private void documentationStat_Click(object sender, EventArgs e) { }
+        private void documentationStatusLB_Click(object sender, EventArgs e) { }
+        private void informations_Paint_1(object sender, PaintEventArgs e) { }
     }
 }
