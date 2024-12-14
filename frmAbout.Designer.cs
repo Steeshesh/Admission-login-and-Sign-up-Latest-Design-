@@ -82,6 +82,7 @@ namespace Admission_login_and_Sign_up__Latest_Design_
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1182, 652);
             this.guna2Panel1.TabIndex = 39;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2CircleButton2
             // 

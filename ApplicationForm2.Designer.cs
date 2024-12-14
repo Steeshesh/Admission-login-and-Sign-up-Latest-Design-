@@ -27,7 +27,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        {   
+
             this.LogoutLink = new System.Windows.Forms.LinkLabel();
             this.Logout = new System.Windows.Forms.PictureBox();
             this.Applybtn = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ProgramSelection.SuspendLayout();
             this.SuspendLayout();
+
             // 
             // LogoutLink
             // 
@@ -258,6 +260,8 @@
             this.GMoralButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.GMoralButton.UseVisualStyleBackColor = true;
             this.GMoralButton.Click += new System.EventHandler(this.GMoralButton_Click);
+            //Chat History
+
             // 
             // BCertButton
             // 

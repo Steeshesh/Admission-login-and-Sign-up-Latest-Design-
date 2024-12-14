@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,11 +38,12 @@
             this.checkbxShowPas = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,18 +140,6 @@
             this.linkLabel1.Text = "Sign-up";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.log_bg;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1182, 653);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(80)))), ((int)(((byte)(113)))));
@@ -197,11 +187,46 @@
             this.guna2DragControl1.TargetControl = this.pictureBox1;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.DimGray;
+            this.guna2CircleButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.BackgroundImage")));
+            this.guna2CircleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(32, 32);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(36, 35);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(35, 51);
+            this.guna2CircleButton1.TabIndex = 13;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Admission_login_and_Sign_up__Latest_Design_.Properties.Resources.log_bg;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1182, 653);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.PasswordInput);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.linkLabel1);
@@ -239,6 +264,7 @@
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.TextBox PasswordInput;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }
 

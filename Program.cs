@@ -1,30 +1,38 @@
-﻿using Admission_login_and_Sign_up__Latest_Design_;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices; // Include this for DllImport
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-
 
 namespace Admission_login_and_Sign_up__Latest_Design_
 {
-    internal static class Program
+    static class Program
     {
         [STAThread]
         static void Main()
         {
-            // Check if the OS version is greater than or equal to 6 and set DPI awareness
-            if (Environment.OSVersion.Version.Major >= 6)
-                SetProcessDPIAware();
+            try
+            {
+                // Enable DPI awareness
+                if (Environment.OSVersion.Version.Major >= 6)
+                {
+                    SetProcessDPIAware();
+                }
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmHome());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                // Set the process priority
+                System.Diagnostics.Process.GetCurrentProcess().PriorityClass =
+                    System.Diagnostics.ProcessPriorityClass.High;
+
+                Application.Run(new frmHome());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Application Error: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // Import the SetProcessDPIAware function from user32.dll
-        [DllImport("user32.dll")]
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
     }
 }

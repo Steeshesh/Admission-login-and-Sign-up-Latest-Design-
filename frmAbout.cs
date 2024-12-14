@@ -17,11 +17,10 @@ namespace Admission_login_and_Sign_up__Latest_Design_
     {
         private string[] inspirationalMessages = new string[]
         {
-        "Those who join our community—\n" +
-        "to learn, research, teach, work, and grow\n" +
-        "—join nearly four centuries of students \n" +
-        "and scholars in the pursuit of truth,\n" +
-        "knowledge, and a better world.",
+        "GABCO was founded by four visionary students\n" +
+"—Guerrero, Alampayan, Bautista, and Combo—\n" +
+"who shared a common dream of creating\n" +
+"a transformative learning institution.",
 
         "Every student who walks through our doors—\n" +
         "driven by curiosity, passion, and purpose\n" +
@@ -243,6 +242,11 @@ namespace Admission_login_and_Sign_up__Latest_Design_
 
             // Close the application when the new form is closed
             AboutPage.FormClosed += (s, args) => this.Close();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

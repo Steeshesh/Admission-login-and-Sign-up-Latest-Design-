@@ -148,5 +148,13 @@ namespace Admission_login_and_Sign_up__Latest_Design_
         private void label2_Click(object sender, EventArgs e)
         {
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            frmHome HomePage = new frmHome();
+            this.Hide();
+            HomePage.Show();
+            HomePage.FormClosed += (s, args) => this.Close();
+        }
     }
 }
